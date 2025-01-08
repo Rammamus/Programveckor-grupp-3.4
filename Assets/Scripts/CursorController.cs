@@ -13,9 +13,9 @@ public partial class CursorController : MonoBehaviour {
         transform.position = tilePos + new Vector3(0.5f, 0.5f, -1);
 
         if (Input.GetMouseButton(0)) {
-            dualGridTilemap.SetCell(tilePos, dualGridTilemap.dirtPlaceholderTile);
+            dualGridTilemap.SetCell(tilePos, dualGridTilemap.wallPlaceholderTile);
         } else if (Input.GetMouseButton(1)) {
-            dualGridTilemap.SetCell(tilePos, dualGridTilemap.grassPlaceholderTile);
+            dualGridTilemap.SetCell(tilePos, dualGridTilemap.groundPlaceholderTile);
         }
     }
 

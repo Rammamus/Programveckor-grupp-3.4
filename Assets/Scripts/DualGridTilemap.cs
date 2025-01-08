@@ -20,8 +20,8 @@ public class DualGridTilemap : MonoBehaviour {
     public Tilemap displayTilemap;
 
     // Provide the dirt and grass placeholder tiles in the inspector
-    public Tile grassPlaceholderTile;
-    public Tile dirtPlaceholderTile;
+    public Tile groundPlaceholderTile;
+    public Tile wallPlaceholderTile;
 
     // Provide the 16 tiles in the inspector
     public Tile[] tiles;
@@ -31,22 +31,22 @@ public class DualGridTilemap : MonoBehaviour {
         // |_1_|_2_|
         // |_3_|_4_|
         neighbourTupleToTile = new() {
-            {new (Grass, Grass, Grass, Grass), tiles[6]},
-            {new (Dirt, Dirt, Dirt, Grass), tiles[13]}, // OUTER_BOTTOM_RIGHT
-            {new (Dirt, Dirt, Grass, Dirt), tiles[0]}, // OUTER_BOTTOM_LEFT
-            {new (Dirt, Grass, Dirt, Dirt), tiles[8]}, // OUTER_TOP_RIGHT
-            {new (Grass, Dirt, Dirt, Dirt), tiles[15]}, // OUTER_TOP_LEFT
-            {new (Dirt, Grass, Dirt, Grass), tiles[1]}, // EDGE_RIGHT
-            {new (Grass, Dirt, Grass, Dirt), tiles[11]}, // EDGE_LEFT
-            {new (Dirt, Dirt, Grass, Grass), tiles[3]}, // EDGE_BOTTOM
-            {new (Grass, Grass, Dirt, Dirt), tiles[9]}, // EDGE_TOP
-            {new (Dirt, Grass, Grass, Grass), tiles[5]}, // INNER_BOTTOM_RIGHT
-            {new (Grass, Dirt, Grass, Grass), tiles[2]}, // INNER_BOTTOM_LEFT
-            {new (Grass, Grass, Dirt, Grass), tiles[10]}, // INNER_TOP_RIGHT
-            {new (Grass, Grass, Grass, Dirt), tiles[7]}, // INNER_TOP_LEFT
-            {new (Dirt, Grass, Grass, Dirt), tiles[14]}, // DUAL_UP_RIGHT
-            {new (Grass, Dirt, Dirt, Grass), tiles[4]}, // DUAL_DOWN_RIGHT
-            {new (Dirt, Dirt, Dirt, Dirt), tiles[12]},
+            {new (Ground, Ground, Ground, Ground), tiles[6]},
+            {new (Wall, Wall, Wall, Ground), tiles[13]}, // OUTER_BOTTOM_RIGHT
+            {new (Wall, Wall, Ground, Wall), tiles[0]}, // OUTER_BOTTOM_LEFT
+            {new (Wall, Ground, Wall, Wall), tiles[8]}, // OUTER_TOP_RIGHT
+            {new (Ground, Wall, Wall, Wall), tiles[15]}, // OUTER_TOP_LEFT
+            {new (Wall, Ground, Wall, Ground), tiles[1]}, // EDGE_RIGHT
+            {new (Ground, Wall, Ground, Wall), tiles[11]}, // EDGE_LEFT
+            {new (Wall, Wall, Ground, Ground), tiles[3]}, // EDGE_BOTTOM
+            {new (Ground, Ground, Wall, Wall), tiles[9]}, // EDGE_TOP
+            {new (Wall, Ground, Ground, Ground), tiles[5]}, // INNER_BOTTOM_RIGHT
+            {new (Ground, Wall, Ground, Ground), tiles[2]}, // INNER_BOTTOM_LEFT
+            {new (Ground, Ground, Wall, Ground), tiles[10]}, // INNER_TOP_RIGHT
+            {new (Ground, Ground, Ground, Wall), tiles[7]}, // INNER_TOP_LEFT
+            {new (Wall, Ground, Ground, Wall), tiles[14]}, // DUAL_UP_RIGHT
+            {new (Ground, Wall, Wall, Ground), tiles[4]}, // DUAL_DOWN_RIGHT
+            {new (Wall, Wall, Wall, Wall), tiles[12]},
         };
         RefreshDisplayTilemap();
     }
@@ -57,10 +57,10 @@ public class DualGridTilemap : MonoBehaviour {
     }
 
     private TileType getPlaceholderTileTypeAt(Vector3Int coords) {
-        if (placeholderTilemap.GetTile(coords) == grassPlaceholderTile)
-            return Grass;
+        if (placeholderTilemap.GetTile(coords) == groundPlaceholderTile)
+            return Ground;
         else
-            return Dirt;
+            return Wall;
     }
 
     protected Tile calculateDisplayTile(Vector3Int coords) {
@@ -94,6 +94,6 @@ public class DualGridTilemap : MonoBehaviour {
 
 public enum TileType {
     None,
-    Grass,
-    Dirt
+    Ground,
+    Wall
 }
