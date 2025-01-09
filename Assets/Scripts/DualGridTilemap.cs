@@ -5,8 +5,10 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using static TileType;
 
-public class DualGridTilemap : MonoBehaviour {
-    protected static Vector3Int[] NEIGHBOURS = new Vector3Int[] {
+public class DualGridTilemap : MonoBehaviour
+{
+    protected static Vector3Int[] NEIGHBOURS = new Vector3Int[]
+    {
         new Vector3Int(0, 0, 0),
         new Vector3Int(1, 0, 0),
         new Vector3Int(0, 1, 0),
