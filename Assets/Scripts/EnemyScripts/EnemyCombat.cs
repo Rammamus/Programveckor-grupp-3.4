@@ -7,7 +7,7 @@ public class EnemyCombat : MonoBehaviour
     [Header("Attack Related")]
     public float attackDMG;
     public float attackSpeed;
-    public float attackSpeedTimer;
+    float attackSpeedTimer;
     public float attackRange;
     public bool isInRange;
 
@@ -15,17 +15,18 @@ public class EnemyCombat : MonoBehaviour
     public float hp;
     public float maxHP;
 
-    PlayerCombat player;
+    public PlayerCombat player;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
+        attackSpeedTimer = attackSpeed;
         hp = maxHP;
         player = FindObjectOfType<PlayerCombat>();
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if (isInRange && attackSpeedTimer >= attackSpeed)
         {
@@ -56,9 +57,8 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
-    public void AttackPlayer(float dmg)
+    public virtual void AttackPlayer(float dmg)
     {
-        player.hp -= dmg;
         Debug.Log("KABOOOM MEGA  ATTACK");
     }
 }
