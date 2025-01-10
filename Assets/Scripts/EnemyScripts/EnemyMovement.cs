@@ -9,8 +9,8 @@ public class EnemyMovement : MonoBehaviour
 
     NavMeshAgent agent;
     GameObject player;
-    bool canSeePlayer;
-    float sightDistance = 5;
+    public bool canSeePlayer;
+    float sightDistance = 8;
 
     private void Start()
     {

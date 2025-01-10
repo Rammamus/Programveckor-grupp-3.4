@@ -9,7 +9,7 @@ public class EnemyCombat : MonoBehaviour
     public float attackSpeed;
     float attackSpeedTimer;
     public float attackRange;
-    public bool isInRange;
+    public bool inAttkRange;
 
     [Header("HP Related")]
     public float hp;
@@ -28,7 +28,7 @@ public class EnemyCombat : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if (isInRange && attackSpeedTimer >= attackSpeed)
+        if (inAttkRange && attackSpeedTimer >= attackSpeed)
         {
             AttackPlayer(attackDMG);
             attackSpeedTimer = 0;
@@ -45,8 +45,8 @@ public class EnemyCombat : MonoBehaviour
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, attackRange);
         if (ray.collider != null)
         {
-            isInRange = ray.collider.CompareTag("Player");
-            if (isInRange)
+            inAttkRange = ray.collider.CompareTag("Player");
+            if (inAttkRange)
             {
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
             }
