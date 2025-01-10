@@ -15,11 +15,16 @@ public class FireflyCombat : EnemyCombat
     public override void Update()
     {
         base.Update();
+        if (inAttkRange)
+        {
+            Debug.Log("attack range: " + attackRange);
+            //gameObject.GetComponent<EnemyMovement>().canSeePlayer = false;
+        }
     }
 
     public override void AttackPlayer(float dmg)
     {
         base.AttackPlayer(dmg);
-        Instantiate(prefab, transform.position, Quaternion.identity);
+        //Instantiate(prefab, transform.position, Quaternion.identity);
     }
 }
