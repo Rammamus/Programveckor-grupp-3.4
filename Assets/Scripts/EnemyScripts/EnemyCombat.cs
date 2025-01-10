@@ -5,11 +5,15 @@ using UnityEngine;
 public class EnemyCombat : MonoBehaviour
 {
     [Header("Attack Related")]
-    public float attackDMG, attackSpeed, attackSpeedTimer, attackRange;
+    public float attackDMG;
+    public float attackSpeed;
+    public float attackSpeedTimer;
+    public float attackRange;
     public bool isInRange;
 
     [Header("HP Related")]
-    public float hp, maxHP;
+    public float hp;
+    public float maxHP;
 
     PlayerCombat player;
 
@@ -55,5 +59,6 @@ public class EnemyCombat : MonoBehaviour
     public void AttackPlayer(float dmg)
     {
         player.hp -= dmg;
+        Debug.Log("KABOOOM MEGA  ATTACK");
     }
 }

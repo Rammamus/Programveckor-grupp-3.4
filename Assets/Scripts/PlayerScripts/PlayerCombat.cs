@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     [Header("Attack Related")]
-    public float attackDamage, attackSpeed;
+    public float attackDamage;
+    public float attackSpeed;
 
     [Header("HP Related")]
-    public float hp, maxHP;
+    public float hp;
+    public float maxHP;
 
     // Start is called before the first frame update
     void Start()
