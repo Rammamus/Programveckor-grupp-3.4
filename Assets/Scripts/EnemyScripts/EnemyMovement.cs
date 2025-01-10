@@ -30,10 +30,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Sends raycast towards player - Adrian
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, sightDistance);
         if (ray.collider != null)
         {
-            canSeePlayer = ray.collider.CompareTag("Player");
+            canSeePlayer = ray.collider.CompareTag("Player"); //If it hit player, it can see player - Adrian
             if (canSeePlayer)
             {
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
