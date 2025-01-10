@@ -7,12 +7,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource sfxSource;
 
     [Header("Audio Clips")]
+    public AudioClip bgm;
+    public AudioClip bossBgm;
     public AudioClip[] audioClips;
     public AudioClip whip;
 
     private void Start()
     {
-        sfxSource.Play();
+        musicSource.Play();
 
     }
 
