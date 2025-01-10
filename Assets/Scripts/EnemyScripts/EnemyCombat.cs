@@ -19,4 +19,9 @@ public class EnemyCombat : MonoBehaviour
     {
         
     }
+
+    public void AttackPlayer()
+    {
+
+    }
 }

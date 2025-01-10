@@ -20,7 +20,7 @@ public class PlayerCombat : MonoBehaviour
         
     }
 
-    public void Attack(EnemyCombat enemy, float dmg)
+    public void AttackEnemy(EnemyCombat enemy, float dmg)
     {
         
     }
