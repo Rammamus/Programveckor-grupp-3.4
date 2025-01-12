@@ -22,50 +22,54 @@ public class DualGridTilemap : MonoBehaviour
     public Tilemap displayTilemap;
 
     // Provide the dirt and grass placeholder tiles in the inspector
-    public Tile groundPlaceholderTile;
-    public Tile wallPlaceholderTile;
+    public Tile placeholderTile1;
+    public Tile placeholderTile2;
 
     // Provide the 16 tiles in the inspector
     public Tile[] tiles;
 
-    void Start() {
+    void Start()
+    {
         // This dictionary stores the "rules", each 4-neighbour configuration corresponds to a tile
         // |_1_|_2_|
         // |_3_|_4_|
         neighbourTupleToTile = new() {
-            {new (Ground, Ground, Ground, Ground), tiles[6]},
-            {new (Wall, Wall, Wall, Ground), tiles[13]}, // OUTER_BOTTOM_RIGHT
-            {new (Wall, Wall, Ground, Wall), tiles[0]}, // OUTER_BOTTOM_LEFT
-            {new (Wall, Ground, Wall, Wall), tiles[8]}, // OUTER_TOP_RIGHT
-            {new (Ground, Wall, Wall, Wall), tiles[15]}, // OUTER_TOP_LEFT
-            {new (Wall, Ground, Wall, Ground), tiles[1]}, // EDGE_RIGHT
-            {new (Ground, Wall, Ground, Wall), tiles[11]}, // EDGE_LEFT
-            {new (Wall, Wall, Ground, Ground), tiles[3]}, // EDGE_BOTTOM
-            {new (Ground, Ground, Wall, Wall), tiles[9]}, // EDGE_TOP
-            {new (Wall, Ground, Ground, Ground), tiles[5]}, // INNER_BOTTOM_RIGHT
-            {new (Ground, Wall, Ground, Ground), tiles[2]}, // INNER_BOTTOM_LEFT
-            {new (Ground, Ground, Wall, Ground), tiles[10]}, // INNER_TOP_RIGHT
-            {new (Ground, Ground, Ground, Wall), tiles[7]}, // INNER_TOP_LEFT
-            {new (Wall, Ground, Ground, Wall), tiles[14]}, // DUAL_UP_RIGHT
-            {new (Ground, Wall, Wall, Ground), tiles[4]}, // DUAL_DOWN_RIGHT
-            {new (Wall, Wall, Wall, Wall), tiles[12]},
+            {new (placeHolder1, placeHolder1, placeHolder1, placeHolder1), tiles[6]},
+            {new (placeholder2, placeholder2, placeholder2, placeHolder1), tiles[13]}, // OUTER_BOTTOM_RIGHT
+            {new (placeholder2, placeholder2, placeHolder1, placeholder2), tiles[0]}, // OUTER_BOTTOM_LEFT
+            {new (placeholder2, placeHolder1, placeholder2, placeholder2), tiles[8]}, // OUTER_TOP_RIGHT
+            {new (placeHolder1, placeholder2, placeholder2, placeholder2), tiles[15]}, // OUTER_TOP_LEFT
+            {new (placeholder2, placeHolder1, placeholder2, placeHolder1), tiles[1]}, // EDGE_RIGHT
+            {new (placeHolder1, placeholder2, placeHolder1, placeholder2), tiles[11]}, // EDGE_LEFT
+            {new (placeholder2, placeholder2, placeHolder1, placeHolder1), tiles[3]}, // EDGE_BOTTOM
+            {new (placeHolder1, placeHolder1, placeholder2, placeholder2), tiles[9]}, // EDGE_TOP
+            {new (placeholder2, placeHolder1, placeHolder1, placeHolder1), tiles[5]}, // INNER_BOTTOM_RIGHT
+            {new (placeHolder1, placeholder2, placeHolder1, placeHolder1), tiles[2]}, // INNER_BOTTOM_LEFT
+            {new (placeHolder1, placeHolder1, placeholder2, placeHolder1), tiles[10]}, // INNER_TOP_RIGHT
+            {new (placeHolder1, placeHolder1, placeHolder1, placeholder2), tiles[7]}, // INNER_TOP_LEFT
+            {new (placeholder2, placeHolder1, placeHolder1, placeholder2), tiles[14]}, // DUAL_UP_RIGHT
+            {new (placeHolder1, placeholder2, placeholder2, placeHolder1), tiles[4]}, // DUAL_DOWN_RIGHT
+            {new (placeholder2, placeholder2, placeholder2, placeholder2), tiles[12]},
         };
         RefreshDisplayTilemap();
     }
 
-    public void SetCell(Vector3Int coords, Tile tile) {
+    public void SetCell(Vector3Int coords, Tile tile)
+    {
         placeholderTilemap.SetTile(coords, tile);
         setDisplayTile(coords);
     }
 
-    private TileType getPlaceholderTileTypeAt(Vector3Int coords) {
-        if (placeholderTilemap.GetTile(coords) == groundPlaceholderTile)
-            return Ground;
+    private TileType getPlaceholderTileTypeAt(Vector3Int coords)
+    {
+        if (placeholderTilemap.GetTile(coords) == placeholderTile1)
+            return placeHolder1;
         else
-            return Wall;
+            return placeholder2;
     }
 
-    protected Tile calculateDisplayTile(Vector3Int coords) {
+    protected Tile calculateDisplayTile(Vector3Int coords)
+    {
         // 4 neighbours
         TileType topRight = getPlaceholderTileTypeAt(coords - NEIGHBOURS[0]);
         TileType topLeft = getPlaceholderTileTypeAt(coords - NEIGHBOURS[1]);
@@ -77,7 +81,8 @@ public class DualGridTilemap : MonoBehaviour
         return neighbourTupleToTile[neighbourTuple];
     }
 
-    protected void setDisplayTile(Vector3Int pos) {
+    protected void setDisplayTile(Vector3Int pos)
+    {
         for (int i = 0; i < NEIGHBOURS.Length; i++) {
             Vector3Int newPos = pos + NEIGHBOURS[i];
             displayTilemap.SetTile(newPos, calculateDisplayTile(newPos));
@@ -85,7 +90,8 @@ public class DualGridTilemap : MonoBehaviour
     }
 
     // The tiles on the display tilemap will recalculate themselves based on the placeholder tilemap
-    public void RefreshDisplayTilemap() {
+    public void RefreshDisplayTilemap()
+    {
         for (int i = -50; i < 50; i++) {
             for (int j = -50; j < 50; j++) {
                 setDisplayTile(new Vector3Int(i, j, 0));
@@ -94,8 +100,9 @@ public class DualGridTilemap : MonoBehaviour
     }
 }
 
-public enum TileType {
-    None,
-    Ground,
-    Wall
+public enum TileType
+{
+    none,
+    placeHolder1,
+    placeholder2
 }

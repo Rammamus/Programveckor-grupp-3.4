@@ -365,7 +365,7 @@ TextureImporter:
       name: GroundTilesetPlaceholder_12
       rect:
         serializedVersion: 2
-        x: 16
+        x: 0
         y: 0
         width: 16
         height: 16
@@ -386,7 +386,7 @@ TextureImporter:
       name: GroundTilesetPlaceholder_13
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 0
         width: 16
         height: 16
@@ -407,7 +407,7 @@ TextureImporter:
       name: GroundTilesetPlaceholder_14
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 0
         width: 16
         height: 16
@@ -420,6 +420,27 @@ TextureImporter:
       bones: []
       spriteID: 6c9902e080aa40c4e810ca0cdb10a47b
       internalID: 1808675453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTilesetPlaceholder_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42327895816dc6944af2ee4f0e28ef5d
+      internalID: 262368632
       vertices: []
       indices: 
       edges: []
@@ -442,6 +463,7 @@ TextureImporter:
       GroundTilesetPlaceholder_12: -1572436718
       GroundTilesetPlaceholder_13: -1256277438
       GroundTilesetPlaceholder_14: 1808675453
+      GroundTilesetPlaceholder_15: 262368632
       GroundTilesetPlaceholder_2: 2049378132
       GroundTilesetPlaceholder_3: -791232222
       GroundTilesetPlaceholder_4: 276121403
