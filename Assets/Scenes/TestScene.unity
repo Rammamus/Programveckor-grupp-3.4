@@ -207,6 +207,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &781697800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 781697801}
+  m_Layer: 0
+  m_Name: RoomRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &781697801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781697800}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3001885, y: 1.8141394, z: 0.012543244}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &986301784
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +270,7 @@ MonoBehaviour:
   saveBlueprint: 0
   loadBlueprint: 0
   clear: 0
-  blueprint: {fileID: 11400000, guid: 94a36baa8e94e344787bb53d6176573a, type: 2}
+  blueprint: {fileID: 11400000, guid: 712c73386251ebf479229fc12d2c066c, type: 2}
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 0, y: 0, z: 0}
@@ -553,6 +584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5840d3c2bbefb46bc2b28ad24b9468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worldsize: {x: 4, y: 4}
+  numberOfRooms: 20
   roomWhiteObj: {fileID: 3322088945545014421, guid: 71f89c1ed440ba14a8b6144290c21699, type: 3}
 --- !u!4 &2137594587
 Transform:
@@ -5390,3 +5423,4 @@ SceneRoots:
   - {fileID: 214104961}
   - {fileID: 986301786}
   - {fileID: 2137594587}
+  - {fileID: 781697801}

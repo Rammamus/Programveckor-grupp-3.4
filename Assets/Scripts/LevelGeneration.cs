@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour
 {
-    Vector2 worldsize = new Vector2(4, 4);
+    public Vector2 worldsize = new Vector2(4, 4);
     Room[,] rooms;
     List<Vector2> takenPositions = new List<Vector2>();
-    int gridsizeX, gridsizeY, numberOfRooms = 20;
+    int gridsizeX, gridsizeY;
+    public int numberOfRooms = 20;
 
     public GameObject roomWhiteObj;
 

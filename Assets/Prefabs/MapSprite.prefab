@@ -99,8 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spU: {fileID: 21300000, guid: e830c8d6cfcc0804f8d8cf293141aa70, type: 3}
   spD: {fileID: 21300000, guid: f07ce4de1ecd10f488e645e00a619610, type: 3}
-  spR: {fileID: 21300000, guid: 57da10b2fdca99849b353e1f16ca51d1, type: 3}
-  spL: {fileID: 21300000, guid: 5a9abd00df179614694659c98b617616, type: 3}
+  spR: {fileID: 21300000, guid: 5a9abd00df179614694659c98b617616, type: 3}
+  spL: {fileID: 21300000, guid: 57da10b2fdca99849b353e1f16ca51d1, type: 3}
   spUD: {fileID: 21300000, guid: a8b5f7e806778ee4493ad8bd30ed297a, type: 3}
   spRL: {fileID: 21300000, guid: 2bc7a14a2a2fc9943b902fd4071a0704, type: 3}
   spUR: {fileID: 21300000, guid: 48287d7829cdbab43890d9abd2903426, type: 3}
