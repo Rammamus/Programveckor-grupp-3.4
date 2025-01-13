@@ -38,8 +38,8 @@ public class GenerateBlueprint : MonoBehaviour
             print(wallLayer.origin);
             print(wallLayer.size);
 
-            area.size = wallLayer.size;
-            area.position = wallLayer.origin;
+            area.size = new Vector3Int(100, 100, 1);
+            area.position = new Vector3Int(-50, -50, 0);
 
             blueprint.wallLayer = wallLayer.GetTilesBlock(area);
             blueprint.groundlayer = groundlayer.GetTilesBlock(area);
