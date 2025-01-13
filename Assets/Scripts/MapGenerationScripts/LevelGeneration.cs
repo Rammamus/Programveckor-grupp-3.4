@@ -25,6 +25,7 @@ public class LevelGeneration : MonoBehaviour
         CreateRooms();
         SetRoomDoors();
         DrawMap();
+        GetComponent<SheetAssigner>().Assign(rooms);
     }
 
     // Update is called once per frame
