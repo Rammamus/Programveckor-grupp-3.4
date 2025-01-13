@@ -12,10 +12,17 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] audioClips;
     public AudioClip whip;
 
+
+    // set audio source to loop 
     private void Start()
     {
         musicSource.Play();
 
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlaySFX(AudioClip clip)
@@ -23,9 +30,6 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(clip);
     }
 
-    public void PlayWhipSound()
-    {
-        sfxSource.PlayOneShot(whip);
-    }
+    
 
 }
