@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class UIManager : MonoBehaviour
         
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -51,11 +57,18 @@ public class UIManager : MonoBehaviour
 
     public void Back()
     {
-        if (isSettingsActive)
+        if (isSettingsActive && SceneManager.GetActiveScene().name == ("MainMenu"))
+        {
+            isSettingsActive = false;
+            settingsMenu.SetActive(isSettingsActive);
+            
+        }
+        else if (isSettingsActive)
         {
             isSettingsActive = false;
             settingsMenu.SetActive(isSettingsActive);
             pauseMenu.SetActive(true); // Show the pause menu when going back from settings
+
         }
     }
 

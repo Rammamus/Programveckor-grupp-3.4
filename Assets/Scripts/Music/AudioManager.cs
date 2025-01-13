@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] audioClips;
     public AudioClip whip;
 
+
+    // set audio source to loop 
     private void Start()
     {
         musicSource.Play();
