@@ -18,14 +18,16 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void PlaySFX(AudioClip clip)
     {
         sfxSource.PlayOneShot(clip);
     }
 
-    public void PlayWhipSound()
-    {
-        sfxSource.PlayOneShot(whip);
-    }
+    
 
 }
