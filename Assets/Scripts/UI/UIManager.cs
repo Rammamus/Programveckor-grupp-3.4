@@ -61,6 +61,8 @@ public class UIManager : MonoBehaviour
         {
             isSettingsActive = false;
             settingsMenu.SetActive(isSettingsActive);
+
+            var ui = GameObject.Find("")
             
         }
         else if (isSettingsActive)
