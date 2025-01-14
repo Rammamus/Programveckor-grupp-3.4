@@ -27,13 +27,11 @@ public class HealthBarScript : MonoBehaviour
     public void DrawHearts()
     {
         ClearHearts();
-
         float maxHealthRemainder = playerHealth.maxHP % 2;
         int heartsToMake = (int)((playerHealth.maxHP / 2) + maxHealthRemainder);
         for (int i = 0; i < heartsToMake; i++)
         {
             CreateEmptyHeart();
-            Debug.LogError("uyap");
         }
 
         for (int i = 0; i < hearts.Count; i++)

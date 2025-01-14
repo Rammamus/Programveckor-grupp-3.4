@@ -55,6 +55,10 @@ public class EnemyCombat : MonoBehaviour
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
             }
         }
+        else
+        {
+            inAttkRange = false;
+        }
     }
 
     public virtual void AttackPlayer(float dmg)

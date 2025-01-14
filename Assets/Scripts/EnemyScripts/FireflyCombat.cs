@@ -17,14 +17,18 @@ public class FireflyCombat : EnemyCombat
         base.Update();
         if (inAttkRange)
         {
-            Debug.Log("attack range: " + attackRange);
-            //gameObject.GetComponent<EnemyMovement>().canSeePlayer = false;
+            gameObject.GetComponent<EnemyMovement>().canMove = false;
+            GetComponent<EnemyMovement>().agent.SetDestination(transform.position);
+        }
+        else
+        {
+            gameObject.GetComponent<EnemyMovement>().canMove = true;
         }
     }
 
     public override void AttackPlayer(float dmg)
     {
         base.AttackPlayer(dmg);
-        //Instantiate(prefab, transform.position, Quaternion.identity);
+        Instantiate(prefab, transform.position, Quaternion.identity);
     }
 }
