@@ -246,8 +246,6 @@ MonoBehaviour:
   wallLayer: {fileID: 4997069538904106176}
   groundlayer: {fileID: 8102662445385389619}
   decorationlayer: {fileID: 5106705929483274528}
-  wallTilemap: {fileID: 8025724248207891806}
-  groundTilemap: {fileID: 3931458348819258212}
 --- !u!4 &986301786
 Transform:
   m_ObjectHideFlags: 0
@@ -725,6 +723,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldsize: {x: 4, y: 4}
   numberOfRooms: 20
+  normalRoomChance: 9
+  TreasuryChance: 1
   roomWhiteObj: {fileID: 3322088945545014421, guid: 71f89c1ed440ba14a8b6144290c21699, type: 3}
   wallLayer: {fileID: 8025724248207891806}
   groundLayer: {fileID: 3931458348819258212}
@@ -1189,10 +1189,14 @@ MonoBehaviour:
   wallLayer: {fileID: 4997069538904106176}
   groundlayer: {fileID: 8102662445385389619}
   decorationlayer: {fileID: 5106705929483274528}
-  RoomsNormal:
-  - {fileID: 4846257984940706393, guid: 6f1f5298860b4b74f8bba1680a163ec3, type: 3}
   RoomsStart:
   - {fileID: 5066773949325198227, guid: f060740bda1519a4c8602d96016ddfa8, type: 3}
+  RoomsNormal:
+  - {fileID: 4846257984940706393, guid: 6f1f5298860b4b74f8bba1680a163ec3, type: 3}
+  RoomsTreasury:
+  - {fileID: 4846257984940706393, guid: 6f1f5298860b4b74f8bba1680a163ec3, type: 3}
+  RoomsBoss:
+  - {fileID: 4846257984940706393, guid: 6f1f5298860b4b74f8bba1680a163ec3, type: 3}
   roomDimensions: {x: 100, y: 100}
 --- !u!483693784 &7363559996774905948
 TilemapRenderer:

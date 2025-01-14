@@ -16,9 +16,6 @@ public class GenerateBlueprint : MonoBehaviour
     public Tilemap groundlayer;
     public Tilemap decorationlayer;
 
-    public DualGridTilemap wallTilemap;
-    public DualGridTilemap groundTilemap;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -55,9 +52,6 @@ public class GenerateBlueprint : MonoBehaviour
             groundlayer.SetTilesBlock(blueprint.area, blueprint.groundlayer);
             decorationlayer.SetTilesBlock(blueprint.area, blueprint.decorationlayer);
 
-            wallTilemap.RefreshDisplayTilemap();
-            groundTilemap.RefreshDisplayTilemap();
-
             loadBlueprint = false;
         }
 
@@ -66,9 +60,6 @@ public class GenerateBlueprint : MonoBehaviour
             wallLayer.ClearAllTiles();
             groundlayer.ClearAllTiles();
             decorationlayer.ClearAllTiles();
-
-            wallTilemap.RefreshDisplayTilemap();
-            groundTilemap.RefreshDisplayTilemap();
 
             clear = false;
         }
