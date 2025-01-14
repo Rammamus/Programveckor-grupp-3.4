@@ -19,6 +19,9 @@ public class UIManager : MonoBehaviour
     public bool isSettingsActive;
     public bool isPaused;
 
+
+    private GameObject menuUI;
+
     private void Start()
     {
         isSettingsActive = false;
@@ -26,6 +29,9 @@ public class UIManager : MonoBehaviour
 
         settingsMenu.SetActive(isSettingsActive);
         pauseMenu.SetActive(false);
+
+
+        menuUI = GameObject.Find("MenuUI");
         
     }
 
@@ -62,7 +68,7 @@ public class UIManager : MonoBehaviour
             isSettingsActive = false;
             settingsMenu.SetActive(isSettingsActive);
 
-            var ui = GameObject.Find("");
+            menuUI.SetActive(true);
             
         }
         else if (isSettingsActive)
