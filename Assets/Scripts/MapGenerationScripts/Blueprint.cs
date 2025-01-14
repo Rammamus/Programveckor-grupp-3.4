@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu]
-public class Blueprint : ScriptableObject
+public class Blueprint : MonoBehaviour
 {
     public BoundsInt area;
 

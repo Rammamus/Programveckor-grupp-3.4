@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &986301785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   saveBlueprint: 0
   loadBlueprint: 0
   clear: 0
-  blueprint: {fileID: 11400000, guid: 721b35beb16a6b44b8b82bdcd84ce5f8, type: 2}
+  blueprint: {fileID: 0}
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 0, y: 0, z: 0}
@@ -685,7 +685,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5540320893605852931}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86d9a6f058900f146b02a2ba29adc642, type: 3}
   m_Name: 
@@ -726,6 +726,8 @@ MonoBehaviour:
   worldsize: {x: 4, y: 4}
   numberOfRooms: 20
   roomWhiteObj: {fileID: 3322088945545014421, guid: 71f89c1ed440ba14a8b6144290c21699, type: 3}
+  wallLayer: {fileID: 8025724248207891806}
+  groundLayer: {fileID: 3931458348819258212}
 --- !u!4 &4193500984907746693
 Transform:
   m_ObjectHideFlags: 0
@@ -839,25 +841,25 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 3.57e-42
+      e00: 3.994e-42
       e01: 0
-      e02: -7.6034e-39
-      e03: -7.6034e-39
+      e02: -2.4856405e-19
+      e03: -2.4856405e-19
       e10: 0
       e11: 0
-      e12: 3.71e-43
-      e13: 3.71e-43
-      e20: -7.0286334e-33
-      e21: 2.3594494e-12
-      e22: 5.096446e-28
-      e23: -2.0562935
-      e30: 4.5904e-41
-      e31: 3.76e-43
-      e32: 3.73e-43
-      e33: 3.74e-43
+      e12: 9e-43
+      e13: 9e-43
+      e20: 5.854018e-32
+      e21: 7.012953e-19
+      e22: 1.2257138e-23
+      e23: 2.5890517e-29
+      e30: 4.5905e-41
+      e31: 9.04e-43
+      e32: 9.01e-43
+      e33: 9.04e-43
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+    m_Data: {r: 3.5268e-41, g: 3.5268e-41, b: 3.5268e-41, a: 3.5268e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1275,7 +1277,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9065131303357348015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86d9a6f058900f146b02a2ba29adc642, type: 3}
   m_Name: 
@@ -1324,25 +1326,25 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 2.2936e-41
+      e00: 3.502e-42
       e01: 0
-      e02: -9.31294e-39
-      e03: -9.31294e-39
+      e02: -2.4772033e-19
+      e03: -2.4772033e-19
       e10: 0
       e11: 0
-      e12: 3.71e-43
-      e13: 3.71e-43
-      e20: -7.0286334e-33
-      e21: 2.3594182e-12
-      e22: 5.221801e-28
-      e23: -2.0565872
-      e30: 4.5904e-41
-      e31: 3.76e-43
-      e32: 3.73e-43
-      e33: 3.74e-43
+      e12: 9e-43
+      e13: 9e-43
+      e20: 5.854018e-32
+      e21: 7.012928e-19
+      e22: 4.839204e-24
+      e23: 2.5977762e-29
+      e30: 4.5905e-41
+      e31: 9.04e-43
+      e32: 9.01e-43
+      e33: 9.04e-43
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: 3.6159e-41, g: 3.6159e-41, b: 3.6159e-41, a: 3.6159e-41}
+    m_Data: {r: 3.5072e-41, g: 3.5072e-41, b: 3.5072e-41, a: 3.5072e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
