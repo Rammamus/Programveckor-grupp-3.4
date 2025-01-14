@@ -10,6 +10,9 @@ public class LevelGeneration : MonoBehaviour
     int gridsizeX, gridsizeY;
     public int numberOfRooms = 20;
 
+    public int normalRoomChance;
+    public int TreasuryChance;
+
     public GameObject roomWhiteObj;
 
     public DualGridTilemap wallLayer;
@@ -43,7 +46,7 @@ public class LevelGeneration : MonoBehaviour
     void CreateRooms()
     {
         rooms = new Room[gridsizeX * 2, gridsizeY * 2];
-        rooms[gridsizeX, gridsizeY] = new Room(Vector2.zero, 1);
+        rooms[gridsizeX, gridsizeY] = new Room(Vector2.zero, 0);
         takenPositions.Insert(0, Vector2.zero);
         Vector2 checkPos = Vector2.zero;
 
@@ -55,6 +58,8 @@ public class LevelGeneration : MonoBehaviour
             randomCompare = Mathf.Lerp(randomCompareStart, randomCompareEnd, randomPerc);
 
             checkPos = NewPosition();
+
+
 
             if (NumberOfNeighbors(checkPos, takenPositions) > 1 && Random.value > randomCompare)
             {
@@ -72,9 +77,43 @@ public class LevelGeneration : MonoBehaviour
                 }
             }
 
-            rooms[(int)checkPos.x + gridsizeX, (int)checkPos.y + gridsizeY] = new Room(checkPos, 0);
+            rooms[(int)checkPos.x + gridsizeX, (int)checkPos.y + gridsizeY] = new Room(checkPos, SetRoomType(i));
             takenPositions.Insert(0, checkPos);
         }
+    }
+
+    int SetRoomType(int count)
+    {
+        int type = 1;
+
+        if (count == 4)
+        {
+            type = 2;
+        }
+        else if (count == 9)
+        {
+            type = 2;
+        }
+        else if (count == 15)
+        {
+            type = 2;
+        }
+        else if (count == 18)
+        {
+            type = 3;
+        }
+        else
+        {
+            int range = normalRoomChance + TreasuryChance;
+            int rng = Random.Range(0, range);
+
+            if (rng > normalRoomChance - 1 && rng <= range)
+            {
+                type = 2;
+            }
+        }
+
+        return type;
     }
 
     void SetRoomDoors()
