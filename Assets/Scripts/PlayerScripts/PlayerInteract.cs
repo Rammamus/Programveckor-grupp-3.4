@@ -17,7 +17,6 @@ public class PlayerInteract : MonoBehaviour
             {
                 Debug.Log("Triggered by an object with the goldgoldgold tag!");
                 collider.GetComponent<Actionscript>().Action();
-
             }
         }
     }
