@@ -1,8 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class LoadingScene : MonoBehaviour
 {
     public GameObject loadingScreen;
@@ -13,15 +13,32 @@ public class LoadingScene : MonoBehaviour
         StartCoroutine(LoadSceneAsync(sceneId));
     }
 
-    IEnumerator LoadSceneAsync (int sceneId)
+    IEnumerator LoadSceneAsync(int sceneId)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
 
+        loadingScreen.SetActive(true);
+
         while (!operation.isDone)
         {
-            float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
+            // Log the raw progress value
+            Debug.Log($"Raw Loading Progress: {operation.progress}");
 
+            // Calculate the progress value
+            float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
             loadingBarFill.fillAmount = progressValue;
+
+            Debug.Log($"Setting Fill Amount: {progressValue}"); // Debug log to check fill amount
+
+            // Check if the operation is done
+            if (operation.progress >= 0.9f)
+            {
+                // Wait for a moment before activating the scene
+                yield return new WaitForSeconds(1f); // Adjust the delay as needed
+
+                // Allow the scene to activate
+                operation.allowSceneActivation = true;
+            }
 
             yield return null;
         }
@@ -29,3 +46,4 @@ public class LoadingScene : MonoBehaviour
 
 
 }
+
