@@ -63,6 +63,6 @@ public class EnemyCombat : MonoBehaviour
 
     public virtual void AttackPlayer(float dmg)
     {
-        Debug.Log("KABOOOM MEGA  ATTACK");
+
     }
 }
