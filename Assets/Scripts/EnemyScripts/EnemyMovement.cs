@@ -7,9 +7,10 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] Transform target;
 
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     GameObject player;
     public bool canSeePlayer;
+    public bool canMove;
     float sightDistance = 8;
 
     private void Start()
@@ -18,11 +19,12 @@ public class EnemyMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        canMove = true;
     }
 
     private void Update()
     {
-        if (canSeePlayer)
+        if (canSeePlayer && canMove)
         {
             agent.SetDestination(target.position);
         }

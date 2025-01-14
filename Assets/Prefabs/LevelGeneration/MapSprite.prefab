@@ -123,8 +123,10 @@ MonoBehaviour:
   left: 0
   right: 0
   type: 0
+  startColor: {r: 0, g: 0.7725491, b: 0, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0.9528302, g: 0.9036963, b: 0.21933071, a: 1}
+  bossColor: {r: 0.7924528, g: 0, b: 0, a: 1}
 --- !u!222 &1888824007616540809
 CanvasRenderer:
   m_ObjectHideFlags: 0

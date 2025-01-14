@@ -9,7 +9,7 @@ public class SheetAssigner : MonoBehaviour
     public Tilemap groundlayer;
     public Tilemap decorationlayer;
 
-	public GameObject[] RoomsNormal, RoomsStart;
+	public GameObject[] RoomsStart, RoomsNormal, RoomsTreasury, RoomsBoss;
 	public Vector2 roomDimensions = new Vector2(100, 100);
 
 	private GameObject currentRoom;
@@ -27,13 +27,25 @@ public class SheetAssigner : MonoBehaviour
 			{
 				//pick a random index for the array
 				int index = Mathf.RoundToInt(Random.value * (RoomsNormal.Length - 1));
-				currentRoom = RoomsNormal[index];
+				currentRoom = RoomsStart[index];
 			}
 			else if (room.type == 1)
 			{
 				//pick a random index for the array
 				int index = Mathf.RoundToInt(Random.value * (RoomsStart.Length - 1));
-                currentRoom = RoomsStart[index];
+				currentRoom = RoomsNormal[index];
+			}
+            else if (room.type == 2)
+            {
+                //pick a random index for the array
+                int index = Mathf.RoundToInt(Random.value * (RoomsStart.Length - 1));
+                currentRoom = RoomsTreasury[index];
+            }
+            else if (room.type == 3)
+            {
+                //pick a random index for the array
+                int index = Mathf.RoundToInt(Random.value * (RoomsStart.Length - 1));
+                currentRoom = RoomsBoss[index];
             }
 
             //find position to place room

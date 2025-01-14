@@ -9,7 +9,14 @@ public class HealthBarHearts : MonoBehaviour
     public Sprite halfHeart;
     public Sprite emptyHeart;
     public Image heartImage;
-
+    void Awake()
+    {
+        heartImage = GetComponent<Image>();
+        if (heartImage == null)
+        {
+            Debug.LogError("HeartImage is not set. Make sure the Image component is attached to the same GameObject.");
+        }
+    }
     void Start()
     {
         heartImage = GetComponent<Image>();

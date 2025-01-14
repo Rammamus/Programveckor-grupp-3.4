@@ -9,7 +9,7 @@ public class RoomInstance : MonoBehaviour
 
     [HideInInspector]
 	public Vector2 gridPos;
-	public int type; // 0: normal, 1: start
+	public int type; // 0: start, 1: normal, 2: treasury, 3: boss
 
 	private Tilemap wallLayer;
 	private Tilemap groundLayer;

@@ -246,8 +246,6 @@ MonoBehaviour:
   wallLayer: {fileID: 4997069538904106176}
   groundlayer: {fileID: 8102662445385389619}
   decorationlayer: {fileID: 5106705929483274528}
-  wallTilemap: {fileID: 8025724248207891806}
-  groundTilemap: {fileID: 3931458348819258212}
 --- !u!4 &986301786
 Transform:
   m_ObjectHideFlags: 0
@@ -692,25 +690,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeholderTilemap: {fileID: 8102662445385389619}
   displayTilemap: {fileID: 6526067268340150022}
-  placeholderTile1: {fileID: 11400000, guid: 8379a4b90bcdfb245b9128cbb19eddf3, type: 2}
-  placeholderTile2: {fileID: 0}
+  placeholderTile1: {fileID: 11400000, guid: 76b5874fdcf777349be32fdd45090e98, type: 2}
+  placeholderTile2: {fileID: 11400000, guid: 06c269fef195ad0429daaa8886da9106, type: 2}
   tiles:
-  - {fileID: 11400000, guid: 94d90f0ffd0503e4cb48f01cd5ccac88, type: 2}
-  - {fileID: 11400000, guid: a4e937e443ade51499cf19269352d42c, type: 2}
-  - {fileID: 11400000, guid: 36bc71f0809a2544ab6b9029d1e7b8c0, type: 2}
-  - {fileID: 11400000, guid: e5e159ef59e70524b8c929d00711f2c0, type: 2}
-  - {fileID: 11400000, guid: ea9016c0ae903b24687ee02904cd3fea, type: 2}
-  - {fileID: 11400000, guid: 094f7022e3e6e474ab7a1e18699d8dc2, type: 2}
-  - {fileID: 11400000, guid: aebd8317a00efe64faa2a0542fc4fe3e, type: 2}
-  - {fileID: 11400000, guid: 8a4ddee4aebb2964c9c4b8fa8ab66a1e, type: 2}
-  - {fileID: 11400000, guid: 52433ae3a4074e2458c6148cacba3cb3, type: 2}
-  - {fileID: 11400000, guid: 0257809cf7045744eb96187abdc18c3d, type: 2}
-  - {fileID: 11400000, guid: 4234f9aebc8b5f54eb812f494f07d32b, type: 2}
-  - {fileID: 11400000, guid: c130482cc868f594e85633b5af9910cc, type: 2}
-  - {fileID: 11400000, guid: 5d5443e16058939409b8a8d65973dabc, type: 2}
-  - {fileID: 11400000, guid: 13709924b7f04474dbc52eba11215d97, type: 2}
-  - {fileID: 11400000, guid: 288f78439fc2df34a84afb998c75f23f, type: 2}
-  - {fileID: 11400000, guid: 33e0d36e0ffa6a7468437ffa8dc231d8, type: 2}
+  - {fileID: 11400000, guid: 44807e46c70c87042983fbdebdaf9cb5, type: 2}
+  - {fileID: 11400000, guid: a806eb9e7b23ac0479245b52de339f9e, type: 2}
+  - {fileID: 11400000, guid: 589048b9c3ed7874884880d9ade414b9, type: 2}
+  - {fileID: 11400000, guid: 410a1aff2488c5b46a20a766f75ff8cd, type: 2}
+  - {fileID: 11400000, guid: f7891a49b7a49db44ac794393b3e82df, type: 2}
+  - {fileID: 11400000, guid: 39204aa77a0485b4d825beca54688b90, type: 2}
+  - {fileID: 11400000, guid: 53d4966f77a022441b654dcf3b2f207e, type: 2}
+  - {fileID: 11400000, guid: b61149265ea5ea344b1cce8cf6fceaf6, type: 2}
+  - {fileID: 11400000, guid: 2db17bf1aafefd043afb95137194add8, type: 2}
+  - {fileID: 11400000, guid: 1eaca2941f72dab45a412aff6a8a0494, type: 2}
+  - {fileID: 11400000, guid: 40880fa3290a07b4aa9c73d67d60790b, type: 2}
+  - {fileID: 11400000, guid: 5df3e7f8c4cd6a048b0a43ae92852bda, type: 2}
+  - {fileID: 11400000, guid: 9c0721b02549e72439667112a88782bf, type: 2}
+  - {fileID: 11400000, guid: c414634fcbd49cf498234f743853e9e2, type: 2}
+  - {fileID: 11400000, guid: 2dad8129921689945956c653c42c1ddd, type: 2}
+  - {fileID: 11400000, guid: cca5f1995ece2864b86b0faebaf65084, type: 2}
 --- !u!114 &4026365697951774471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,6 +723,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldsize: {x: 4, y: 4}
   numberOfRooms: 20
+  normalRoomChance: 9
+  TreasuryChance: 1
   roomWhiteObj: {fileID: 3322088945545014421, guid: 71f89c1ed440ba14a8b6144290c21699, type: 3}
   wallLayer: {fileID: 8025724248207891806}
   groundLayer: {fileID: 3931458348819258212}
@@ -1189,10 +1189,14 @@ MonoBehaviour:
   wallLayer: {fileID: 4997069538904106176}
   groundlayer: {fileID: 8102662445385389619}
   decorationlayer: {fileID: 5106705929483274528}
-  RoomsNormal:
-  - {fileID: 4846257984940706393, guid: 6f1f5298860b4b74f8bba1680a163ec3, type: 3}
   RoomsStart:
   - {fileID: 5066773949325198227, guid: f060740bda1519a4c8602d96016ddfa8, type: 3}
+  RoomsNormal:
+  - {fileID: 4846257984940706393, guid: 6f1f5298860b4b74f8bba1680a163ec3, type: 3}
+  RoomsTreasury:
+  - {fileID: 4846257984940706393, guid: 6f1f5298860b4b74f8bba1680a163ec3, type: 3}
+  RoomsBoss:
+  - {fileID: 4846257984940706393, guid: 6f1f5298860b4b74f8bba1680a163ec3, type: 3}
   roomDimensions: {x: 100, y: 100}
 --- !u!483693784 &7363559996774905948
 TilemapRenderer:
@@ -1284,7 +1288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeholderTilemap: {fileID: 4997069538904106176}
   displayTilemap: {fileID: 4511493018516093143}
-  placeholderTile1: {fileID: 11400000, guid: 90d6e161625af5a448e86e04a75116d8, type: 2}
+  placeholderTile1: {fileID: 11400000, guid: 5c733815af3b6cc41b04c046a9e1c335, type: 2}
   placeholderTile2: {fileID: 0}
   tiles:
   - {fileID: 11400000, guid: d1d1e67d77eef5c409c876579827b1c5, type: 2}

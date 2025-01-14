@@ -10,7 +10,7 @@ public class MapSpriteSelector : MonoBehaviour
 
     public bool up, down, left, right;
     public int type;
-    public Color normalColor, enterColor;
+    public Color startColor, normalColor, treasuryColor, bossColor;
 
     Color mainColor;
     SpriteRenderer rend;
@@ -119,11 +119,19 @@ public class MapSpriteSelector : MonoBehaviour
     { //changes color based on what type the room is
         if (type == 0)
         {
-            mainColor = normalColor;
+            mainColor = startColor;
         }
         else if (type == 1)
         {
-            mainColor = enterColor;
+            mainColor = normalColor;
+        }
+        else if (type == 2)
+        {
+            mainColor = treasuryColor;
+        }
+        else if (type == 3)
+        {
+            mainColor = bossColor;
         }
         rend.color = mainColor;
     }
