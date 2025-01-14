@@ -19,6 +19,6 @@ public class SalamanderCombat : EnemyCombat
     public override void AttackPlayer(float dmg)
     {
         base.AttackPlayer(dmg);
-        player.hp -= dmg;
+        player.PlayerTakeDMG(attackDMG);
     }
 }

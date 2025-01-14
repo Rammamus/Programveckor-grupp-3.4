@@ -33,8 +33,10 @@ public class PlayerCombat : MonoBehaviour
         
     }
 
-    public void PlayerTakeDMG()
+    public void PlayerTakeDMG(float dmg)
     {
         OnPlayerDamaged?.Invoke();
+        HealthBarScript.FindObjectOfType<HealthBarScript>().DrawHearts();
+        hp -= dmg;
     }
 }
