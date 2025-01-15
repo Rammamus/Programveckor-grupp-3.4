@@ -281,5 +281,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Upgradepanel: Upgradepanel
+  Playername: Player (my goat)
   player: {fileID: 0}
   panel: {fileID: 0}
