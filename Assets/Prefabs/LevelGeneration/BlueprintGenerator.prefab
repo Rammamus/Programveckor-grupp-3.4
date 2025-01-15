@@ -47,12 +47,10 @@ MonoBehaviour:
   saveBlueprint: 0
   loadBlueprint: 0
   clear: 0
-  blueprint: {fileID: 11400000, guid: 712c73386251ebf479229fc12d2c066c, type: 2}
+  blueprint: {fileID: 0}
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 0, y: 0, z: 0}
   wallLayer: {fileID: 0}
   groundlayer: {fileID: 0}
   decorationlayer: {fileID: 0}
-  wallTilemap: {fileID: 0}
-  groundTilemap: {fileID: 0}
