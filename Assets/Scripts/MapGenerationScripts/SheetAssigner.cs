@@ -26,29 +26,25 @@ public class SheetAssigner : MonoBehaviour
 			if (room.type == 0)
 			{
 				//pick a random index for the array
-				int index = Mathf.RoundToInt(Random.value * (RoomsStart.Length - 1));
-				print("start " + index);
+				int index = Random.Range(0, RoomsStart.Length);
 				currentRoom = RoomsStart[index];
 			}
 			else if (room.type == 1)
 			{
 				//pick a random index for the array
-				int index = Mathf.RoundToInt(Random.value * (RoomsNormal.Length - 1));
-                print("normal " + index);
+				int index = Random.Range(0, RoomsNormal.Length);
                 currentRoom = RoomsNormal[index];
 			}
             else if (room.type == 2)
             {
                 //pick a random index for the array
-                int index = Mathf.RoundToInt(Random.value * (RoomsTreasury.Length - 1));
-                print("treasury " + index);
+                int index = Random.Range(0, RoomsTreasury.Length);
                 currentRoom = RoomsTreasury[index];
             }
             else if (room.type == 3)
             {
                 //pick a random index for the array
-                int index = Mathf.RoundToInt(Random.value * (RoomsBoss.Length - 1));
-                print("boss " + index);
+                int index = Random.Range(0, RoomsBoss.Length);
                 currentRoom = RoomsBoss[index];
             }
 
