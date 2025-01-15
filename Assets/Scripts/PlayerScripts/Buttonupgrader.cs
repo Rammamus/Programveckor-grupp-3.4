@@ -132,33 +132,11 @@ public class Buttonupgrader : MonoBehaviour
     }
     public void maxhp2()
     {
-        if (player != null)
-        {
-            PlayerCombat playerCombat = player.GetComponent<PlayerCombat>(); // Use GetComponent
-            if (playerCombat != null)
-            {
-                playerCombat.maxHP += 4;
-
-                HealthBarScript healthBar = FindObjectOfType<HealthBarScript>(); // Use FindObjectOfType
-                if (healthBar != null)
-                {
-                    healthBar.DrawHearts();
-                }
-                else
-                {
-                    Debug.LogWarning("HealthBarScript not found in the scene.");
-                }
-            }
-            else
-            {
-                Debug.LogWarning("PlayerCombat component not found on player: " + Playername);
-            }
-            panel.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("Player with name " + Playername + " not found.");
-        }
+        PlayerCombat playerCombat = player.GetComponent<PlayerCombat>();
+        playerCombat.maxHP += 4;
+        HealthBarScript healthBar = FindObjectOfType<HealthBarScript>();
+        healthBar.DrawHearts();
+        panel.SetActive(false);
     }
     public void maxhp3()
     {

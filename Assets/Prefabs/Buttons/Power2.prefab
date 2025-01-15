@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Upgradepanel: Upgradepanel
-  Playername: Player (my goat)
+  Playername: Player (my goat) 2
   player: {fileID: 0}
   panel: {fileID: 0}
 --- !u!1 &922992207374537149
