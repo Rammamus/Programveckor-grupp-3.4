@@ -113,12 +113,12 @@ TextureImporter:
       name: Player Attack Up_0
       rect:
         serializedVersion: 2
-        x: 25
+        x: 0
         y: 0
-        width: 49
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5132373, y: 0.2002764}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Player Attack Up_1
       rect:
         serializedVersion: 2
-        x: 104
+        x: 80
         y: 0
-        width: 53
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5132373, y: 0.2002764}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: Player Attack Up_2
       rect:
         serializedVersion: 2
-        x: 168
+        x: 160
         y: 0
-        width: 61
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5132373, y: 0.2002764}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: Player Attack Up_3
       rect:
         serializedVersion: 2
-        x: 242
+        x: 240
         y: 0
-        width: 52
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5132373, y: 0.2002764}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: Player Attack Up_4
       rect:
         serializedVersion: 2
-        x: 330
+        x: 320
         y: 0
-        width: 44
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5132373, y: 0.2002764}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: Player Attack Up_5
       rect:
         serializedVersion: 2
-        x: 405
+        x: 400
         y: 0
-        width: 52
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5132373, y: 0.2002764}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

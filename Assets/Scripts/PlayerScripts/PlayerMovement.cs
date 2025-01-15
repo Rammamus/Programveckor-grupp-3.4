@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,10 +12,14 @@ public class PlayerMovement : MonoBehaviour
     bool mouseDown;
 
     NavMeshAgent agent;
+    Animator animator;
+    SpriteRenderer playerSprite;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        playerSprite = GetComponent<SpriteRenderer>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
@@ -34,16 +39,31 @@ public class PlayerMovement : MonoBehaviour
         {
             lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             isMoving = true;
+            
         }
 
         if (isMoving && (Vector2)transform.position != lastClickedPos)
         {
             float step = speed * Time.deltaTime;
             agent.SetDestination(lastClickedPos);
+            animator.SetFloat("xVelocity", 1);
+            if (agent.velocity.x > 0)
+            {
+                playerSprite.flipX = false;
+            }
+            else if (agent.velocity.x < 0)
+            {
+                playerSprite.flipX = true;
+            }
         }
         else
         {
             isMoving = false;
+        }
+
+        if (!isMoving)
+        {
+            animator.SetFloat("xVelocity", 0);
         }
     }
 }
