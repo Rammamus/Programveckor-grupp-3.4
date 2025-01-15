@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 7271187573951515321}
   - component: {fileID: 6314642366981127932}
   - component: {fileID: 1788271539369242204}
+  - component: {fileID: -2150255779144254773}
   m_Layer: 5
   m_Name: Supercool2
   m_TagString: Untagged
@@ -254,4 +255,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6314642366981127932}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -2150255779144254773}
+        m_TargetAssemblyTypeName: Buttonupgrader, Assembly-CSharp
+        m_MethodName: maxhp2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-2150255779144254773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9134162115257599339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca3795ff3f1f6b41b13aba4b39d89cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Upgradepanel: Upgradepanel
+  player: {fileID: 0}
+  panel: {fileID: 0}

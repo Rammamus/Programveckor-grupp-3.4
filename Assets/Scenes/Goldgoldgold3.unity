@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 264572670}
   - component: {fileID: 264572669}
   - component: {fileID: 264572668}
+  - component: {fileID: 264572672}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -225,6 +226,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &264572672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264572667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca3795ff3f1f6b41b13aba4b39d89cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Upgradepanel: {fileID: 1443659306}
+  player: {fileID: 1002483321}
 --- !u!1 &938436942
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,14 +936,13 @@ GameObject:
   - component: {fileID: 1443659308}
   - component: {fileID: 1443659310}
   - component: {fileID: 1443659311}
-  - component: {fileID: 1443659312}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Upgradepanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1443659307
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1038,20 +1052,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1443659312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443659306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca3795ff3f1f6b41b13aba4b39d89cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgradepanel: {fileID: 0}
-  player: {fileID: 0}
 --- !u!1 &2102860317
 GameObject:
   m_ObjectHideFlags: 0

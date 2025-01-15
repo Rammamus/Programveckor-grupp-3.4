@@ -15,7 +15,7 @@ public class PlayerInteract : MonoBehaviour
         {
             if (collider.gameObject != gameObject && collider.gameObject.GetComponent("Actionscript"))
             {
-                Debug.Log("Triggered by an object with the goldgoldgold tag!");
+                //Debug.Log("Triggered by an object with the goldgoldgold tag!");
                 collider.GetComponent<Actionscript>().Action();
             }
         }
