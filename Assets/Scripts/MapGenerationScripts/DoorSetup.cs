@@ -9,7 +9,7 @@ public class DoorSetup : MonoBehaviour
     public float offset;
     public GameObject door;
     public LayerMask layerMask;
-    public Vector2 direction;
+    public Vector3 direction;
 
     // Start is called before the first frame update
     void Start()
@@ -28,19 +28,19 @@ public class DoorSetup : MonoBehaviour
     {
         if (door.name == "DoorU")
         {
-            direction = new Vector2(0, 1);
+            direction = new Vector3(0, 1, 0);
         }
         else if (door.name == "DoorD")
         {
-            direction = new Vector2(0, -1);
+            direction = new Vector3(0, -1, 0);
         }
         else if (door.name == "DoorL")
         {
-            direction = new Vector2(-1, 0);
+            direction = new Vector3(-1, 0, 0);
         }
         else if (door.name == "DoorR")
         {
-            direction = new Vector2(1, 0);
+            direction = new Vector3(1, 0, 0);
         }
     }
 
@@ -54,6 +54,14 @@ public class DoorSetup : MonoBehaviour
         else
         {
             Destroy(door);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.transform.position += direction * distance;
         }
     }
 }
