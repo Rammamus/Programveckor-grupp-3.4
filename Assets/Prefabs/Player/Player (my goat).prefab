@@ -16,7 +16,11 @@ GameObject:
   - component: {fileID: 8704240185732682520}
   - component: {fileID: 4976943627075790621}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - component: {fileID: 8893551123201136388}
+=======
+  - component: {fileID: 2805259559501378378}
+>>>>>>> Stashed changes
 =======
   - component: {fileID: 2805259559501378378}
 >>>>>>> Stashed changes
@@ -208,9 +212,14 @@ MonoBehaviour:
   hp: 10
   maxHP: 10
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!95 &8893551123201136388
 Animator:
   serializedVersion: 5
+=======
+--- !u!114 &2805259559501378378
+MonoBehaviour:
+>>>>>>> Stashed changes
 =======
 --- !u!114 &2805259559501378378
 MonoBehaviour:
@@ -221,6 +230,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8193938343495857524}
   m_Enabled: 1
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: bd4e1e27ec55e594583f47e797ac01fc, type: 2}
@@ -235,8 +245,13 @@ MonoBehaviour:
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
 =======
+=======
+>>>>>>> Stashed changes
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa1e2daa871db56488c2545de8087a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
