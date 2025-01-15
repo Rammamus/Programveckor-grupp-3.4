@@ -338,7 +338,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1190,13 +1190,15 @@ MonoBehaviour:
   groundlayer: {fileID: 8102662445385389619}
   decorationlayer: {fileID: 5106705929483274528}
   RoomsStart:
-  - {fileID: 5066773949325198227, guid: f060740bda1519a4c8602d96016ddfa8, type: 3}
+  - {fileID: 6005022257641527550, guid: 66b624e4cf957ef448633c999619e1b7, type: 3}
+  - {fileID: 9101450352262162651, guid: 3a9023704c625324e8fd46f602700485, type: 3}
+  - {fileID: 4996867628076822525, guid: 6d523cb35e4c48e469ee80c1c312cbe8, type: 3}
   RoomsNormal:
-  - {fileID: 4846257984940706393, guid: 6f1f5298860b4b74f8bba1680a163ec3, type: 3}
+  - {fileID: 210824627396358949, guid: 0e67fdc60a5ba214794a7224fed6b37f, type: 3}
   RoomsTreasury:
-  - {fileID: 4846257984940706393, guid: 6f1f5298860b4b74f8bba1680a163ec3, type: 3}
+  - {fileID: 2109021751604581291, guid: 164fafd28d988b041960b563d7997419, type: 3}
   RoomsBoss:
-  - {fileID: 4846257984940706393, guid: 6f1f5298860b4b74f8bba1680a163ec3, type: 3}
+  - {fileID: 9101450352262162651, guid: 3a9023704c625324e8fd46f602700485, type: 3}
   roomDimensions: {x: 100, y: 100}
 --- !u!483693784 &7363559996774905948
 TilemapRenderer:
