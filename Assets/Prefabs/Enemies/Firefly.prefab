@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5247545074856646301}
   - component: {fileID: 6800535800135863425}
   - component: {fileID: 6439218737543715931}
+  - component: {fileID: 7385204730537669740}
   m_Layer: 0
   m_Name: Firefly
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 128aea91aeb323546a8ee91ac7975de9, type: 3}
+  m_Sprite: {fileID: 344086236, guid: e46b0ff612185df4a8ce653c41f57c95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -141,7 +142,29 @@ MonoBehaviour:
   attackSpeed: 3
   attackRange: 3
   inAttkRange: 0
+  isAttacking: 0
   hp: 0
   maxHP: 0
   player: {fileID: 0}
   prefab: {fileID: 881651266897205421, guid: 751d7d2b731857c46b609b83fe636ecc, type: 3}
+--- !u!95 &7385204730537669740
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116912072184441068}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0365fdb5c978c84e9becc1ff369374d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3169575021863286966}
   - component: {fileID: 1931186884610507558}
   - component: {fileID: 1410785577310870990}
-  - component: {fileID: 8704240185732682520}
   - component: {fileID: 4976943627075790621}
   - component: {fileID: 8893551123201136388}
+  - component: {fileID: 8626173443225715320}
   m_Layer: 0
   m_Name: Player (my goat) 2
   m_TagString: Player
@@ -153,8 +153,47 @@ NavMeshAgent:
   m_BaseOffset: 3
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!58 &8704240185732682520
-CircleCollider2D:
+--- !u!114 &4976943627075790621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8193938343495857524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3998e0582d8e494e864c715193b815e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPower: 0
+  attackSpeed: 0
+  weaponType: 
+  isAttacking: 0
+  hp: 10
+  maxHP: 10
+--- !u!95 &8893551123201136388
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8193938343495857524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd4e1e27ec55e594583f47e797ac01fc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &8626173443225715320
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -182,49 +221,22 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.6666667
---- !u!114 &4976943627075790621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8193938343495857524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3998e0582d8e494e864c715193b815e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage: 0
-  attackSpeed: 0
-  hp: 10
-  maxHP: 10
---- !u!95 &8893551123201136388
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8193938343495857524}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bd4e1e27ec55e594583f47e797ac01fc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &265502521873977964
 PrefabInstance:
   m_ObjectHideFlags: 0

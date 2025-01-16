@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5247545074856646301}
   - component: {fileID: 6800535800135863425}
   - component: {fileID: 4541501569967614796}
+  - component: {fileID: 5615766648148688868}
   m_Layer: 0
   m_Name: Salamander
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 217a0ae8cb3d18c4a846968dea649115, type: 3}
+  m_Sprite: {fileID: -715250166, guid: 113496aa1e34f8040bf4d6a7d9d814e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +98,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.6666667
-  m_Speed: 2
+  m_Speed: 3
   m_Acceleration: 99999
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -138,9 +139,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDMG: 2
-  attackSpeed: 2
-  attackRange: 1
+  attackSpeed: 3
+  attackRange: 0.8
   inAttkRange: 0
+  isAttacking: 0
   hp: 4
   maxHP: 4
   player: {fileID: 0}
+--- !u!95 &5615766648148688868
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116912072184441068}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f415e9b0f7fcd9f40b2cad3776cb1d5b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
