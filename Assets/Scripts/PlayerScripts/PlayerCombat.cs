@@ -6,8 +6,10 @@ using System;
 
 public class PlayerCombat : MonoBehaviour
 {
+    EntityFlash flashEffect;
     public static event Action OnPlayerDamaged;
     Animator animator;
+    SpriteRenderer sprite;
 
     [Header("Attack Related")]
     public float attackPower;
@@ -22,6 +24,8 @@ public class PlayerCombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        flashEffect = GetComponent<EntityFlash>();
+        sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         hp = maxHP;
     }
@@ -45,7 +49,6 @@ public class PlayerCombat : MonoBehaviour
         {
             StartAttack(weaponType, "down", attackPower);
         }
-
     }
 
     public void StartAttack(string weaponType, string direction, float dmg)
@@ -57,15 +60,27 @@ public class PlayerCombat : MonoBehaviour
         }
         if (direction == "left")
         {
-            animator.SetBool("isAttackingUp", true);
+            sprite.flipX = true;
+            animator.SetBool("isAttackingSide", true);
+        }
+        if (direction == "right")
+        {
+            sprite.flipX = false;
+            animator.SetBool("isAttackingSide", true);
+        }
+        if (direction == "down")
+        {
+            animator.SetBool("isAttackingDown", true);
         }
     }
 
     public void StopAttack()
     {
         animator.SetBool("isAttackingUp", false);
+        animator.SetBool("isAttackingSide", false);
+        animator.SetBool("isAttackingSide", false);
+        animator.SetBool("isAttackingDown", false);
         isAttacking = false;
-        print("stop attack");
     }
 
     public void PlayerTakeDMG(float dmg)
@@ -73,5 +88,11 @@ public class PlayerCombat : MonoBehaviour
         OnPlayerDamaged?.Invoke();
         HealthBarScript.FindObjectOfType<HealthBarScript>().DrawHearts();
         hp -= dmg;
+
+        string hexColor = "#FF3939";
+        if (ColorUtility.TryParseHtmlString(hexColor, out Color color))
+        {
+            flashEffect.Flash(color);
+        }
     }
 }

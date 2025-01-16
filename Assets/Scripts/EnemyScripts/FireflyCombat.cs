@@ -15,20 +15,11 @@ public class FireflyCombat : EnemyCombat
     public override void Update()
     {
         base.Update();
-        if (inAttkRange)
-        {
-            gameObject.GetComponent<EnemyMovement>().canMove = false;
-            GetComponent<EnemyMovement>().agent.SetDestination(transform.position);
-        }
-        else
-        {
-            gameObject.GetComponent<EnemyMovement>().canMove = true;
-        }
     }
 
-    public override void AttackPlayer(float dmg)
+    public override void StartAttack(float dmg)
     {
-        base.AttackPlayer(dmg);
+        base.StartAttack(dmg);
         Instantiate(prefab, transform.position, Quaternion.identity);
     }
 }
