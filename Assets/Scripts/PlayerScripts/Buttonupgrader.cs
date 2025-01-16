@@ -35,8 +35,40 @@ public class Buttonupgrader : MonoBehaviour
         else
         {
             // När alla slots är fulla så försöker den replacea
-           // ReplaceStatBonus(newBonus);
+             ReplaceStatBonus(newBonus);
         }
+    }
+    private void ReplaceStatBonus(StatBonus newBonus)
+    {
+        PlayerCombat playerCombat = player.GetComponent<PlayerCombat>();
+
+        PlayerUppgrades playerUppgrade = player.GetComponent<PlayerUppgrades>();
+
+        // Display current bonuses to the player (you can implement this in your UI)
+        Debug.Log("Current bonuses:");
+        for (int i = 0; i < playerUppgrade.statBonuses.Count; i++)
+        {
+            Debug.Log($"{i + 1}: {playerUppgrade.statBonuses[i].bonusName}");
+        }
+
+        // Here you would implement a way to get the player's choice.
+        // For example, you could use a UI dropdown or buttons to let the player select which bonus to replace.
+        // For this example, let's assume the player chooses to replace the first bonus (index 0).
+        int indexToReplace = 0; // Replace this with actual player input
+
+        // Remove the old bonus
+        StatBonus oldBonus = playerUppgrade.statBonuses[indexToReplace];
+        playerUppgrade.statBonuses.RemoveAt(indexToReplace);
+        Debug.Log(oldBonus.bonusName + " replaced with " + newBonus.bonusName);
+
+        oldBonus.RemoveBonus(playerCombat);
+
+        // Add the new bonus
+        playerUppgrade.statBonuses.Add(newBonus);
+        ApplyBonusToPlayer(newBonus);
+        HealthBarScript healthBar = FindObjectOfType<HealthBarScript>();
+        healthBar.DrawHearts();
+
     }
     private void ApplyBonusToPlayer(StatBonus bonus)
     {
@@ -149,14 +181,36 @@ public class StatBonus
                 break;
             case BonusType.Power:
                 playerCombat.attackPower += bonusValue;
-                //playerCombat.attackpower += bonusValue;
                 break;
-            case BonusType.Haste;
-                playerCombat.haste += bonusValue;
+            case BonusType.Haste:
+                playerCombat.attackSpeed += bonusValue;
                 break;
                 // Add more cases for other bonus types as needed
         }
     }
+    public void RemoveBonus(PlayerCombat playerCombat)
+    {
+        switch (bonusType)
+        {
+            case BonusType.MaxHP:
+                playerCombat.maxHP -= bonusValue;
+                break;
+            case BonusType.Speed:
+                NavMeshAgent agent = playerCombat.GetComponent<NavMeshAgent>();
+                if (agent != null)
+                {
+                    agent.speed -= bonusValue;
+                }
+                break;
+            case BonusType.Power:
+                playerCombat.attackPower -= bonusValue;
+                break;
+            case BonusType.Haste:
+                playerCombat.attackSpeed -= bonusValue;
+                break;
+                // Add more cases for other bonus types as needed
+        }
+    }   
 }
 
 public enum BonusType
