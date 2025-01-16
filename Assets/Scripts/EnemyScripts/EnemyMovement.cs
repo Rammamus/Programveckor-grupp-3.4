@@ -6,7 +6,9 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] Transform target;
-
+    public LayerMask ignoreLayer;
+    SpriteRenderer sprite;
+    EnemyCombat enemyCombat;
     public NavMeshAgent agent;
     GameObject player;
     public bool canSeePlayer;
@@ -15,6 +17,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
+        enemyCombat = GetComponent<EnemyCombat>();
         player = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -24,20 +28,32 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (canSeePlayer && canMove)
+        if (enemyCombat.isAttacking)
+        {
+            agent.SetDestination(transform.position);
+        }
+        else if (canSeePlayer && canMove)
         {
             agent.SetDestination(target.position);
+            if (agent.velocity.x > 0)
+            {
+                sprite.flipX = true;
+            }
+            if (agent.velocity.x < 0)
+            {
+                sprite.flipX = false;
+            }
         }
     }
 
     private void FixedUpdate()
     {
         //Sends raycast towards player - Adrian
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, sightDistance);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, sightDistance, ~ignoreLayer);
         if (ray.collider != null)
         {
             canSeePlayer = ray.collider.CompareTag("Player"); //If it hit player, it can see player - Adrian
-            if (canSeePlayer)
+            if (canSeePlayer && !enemyCombat.isAttacking)
             {
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
             }

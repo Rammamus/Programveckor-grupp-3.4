@@ -5,10 +5,6 @@ using UnityEngine.Tilemaps;
 
 public class SheetAssigner : MonoBehaviour
 {
-    public Tilemap wallLayer;
-    public Tilemap groundlayer;
-    public Tilemap decorationlayer;
-
 	public GameObject[] RoomsStart, RoomsNormal, RoomsTreasury, RoomsBoss;
 	public Vector2 roomDimensions = new Vector2(100, 100);
 
@@ -51,7 +47,7 @@ public class SheetAssigner : MonoBehaviour
             //find position to place room
             Vector3 pos = new Vector3(room.gridPos.x * roomDimensions.x, room.gridPos.y * roomDimensions.y, 0);
 			RoomInstance myRoom = Instantiate(currentRoom, pos, Quaternion.identity).GetComponent<RoomInstance>();
-			myRoom.Setup(pos, room.type, wallLayer, groundlayer, decorationlayer);
+			myRoom.Setup(pos, room.type);
 		}
 	}
 }
