@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] Transform target;
     public LayerMask ignoreLayer;
     SpriteRenderer sprite;
     EnemyCombat enemyCombat;
@@ -19,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         enemyCombat = GetComponent<EnemyCombat>();
-        player = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
+        player = FindObjectOfType<PlayerMovement>().gameObject;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -34,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else if (canSeePlayer && canMove)
         {
-            agent.SetDestination(target.position);
+            agent.SetDestination(player.transform.position);
             if (agent.velocity.x > 0)
             {
                 sprite.flipX = true;
