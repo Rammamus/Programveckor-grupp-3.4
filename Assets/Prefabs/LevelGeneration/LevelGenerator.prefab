@@ -64,10 +64,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RoomsStart:
   - {fileID: 6005022257641527550, guid: 66b624e4cf957ef448633c999619e1b7, type: 3}
+  - {fileID: 6005022257641527550, guid: 9a591e8ebaa4838479845026742c075e, type: 3}
+  - {fileID: 6005022257641527550, guid: fb0968fee6feb6c4296cc54030b552f2, type: 3}
+  - {fileID: 6005022257641527550, guid: 65f4b57e9ac0cee4e842121a88ad4abe, type: 3}
   RoomsNormal:
   - {fileID: 210824627396358949, guid: 09e7974c5a0a6b44db0c056b1f098289, type: 3}
+  - {fileID: 210824627396358949, guid: 77084e38a4b8f2e43931992bd26d5006, type: 3}
+  - {fileID: 210824627396358949, guid: 66b4cbe6b8d9ba144a70824790d559ac, type: 3}
+  - {fileID: 210824627396358949, guid: 0b182469d9ac2e94d991f8f40130ecbd, type: 3}
   RoomsTreasury:
   - {fileID: 210824627396358949, guid: 69d6d3c446f58ba4eb256c89bb0c7f37, type: 3}
+  - {fileID: 210824627396358949, guid: 2b32664beb8162e4d821ffccffefa383, type: 3}
   RoomsBoss:
   - {fileID: 210824627396358949, guid: e2872eb7b69bc9b46bc155215a6f17cc, type: 3}
+  - {fileID: 210824627396358949, guid: 584e861ca2675fa418431630f965e7c5, type: 3}
   roomDimensions: {x: 100, y: 100}
