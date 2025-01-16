@@ -73,9 +73,21 @@ MonoBehaviour:
   - {fileID: 4996867628076822525, guid: 6d523cb35e4c48e469ee80c1c312cbe8, type: 3}
   RoomsNormal:
   - {fileID: 210824627396358949, guid: 0e67fdc60a5ba214794a7224fed6b37f, type: 3}
+  - {fileID: 210824627396358949, guid: 325d3addce400bd4fb9d02bdf27f578e, type: 3}
+  - {fileID: 210824627396358949, guid: 6a75ca07db566af408949bdaf81eaac9, type: 3}
+  - {fileID: 210824627396358949, guid: 370f98b276c04214dbd79937adc1380d, type: 3}
+  - {fileID: 210824627396358949, guid: fb736e1e3a7425b42aeb2c0152e589c7, type: 3}
+  - {fileID: 210824627396358949, guid: 0e6be5ee1280b5e43a99b260efaf90ee, type: 3}
   - {fileID: 8776913247543923959, guid: 595db4f5d82372c4aa7f1292cb7d719e, type: 3}
+  - {fileID: 8776913247543923959, guid: 8491178046ee007419f094aed5e9c15d, type: 3}
+  - {fileID: 8776913247543923959, guid: 1026940aee943914784dea620d01f4c7, type: 3}
+  - {fileID: 8776913247543923959, guid: ce16ea4d44088fe448661d2bd98785d9, type: 3}
+  - {fileID: 8776913247543923959, guid: 24740eb8e30c72449b4756efac47625e, type: 3}
+  - {fileID: 8776913247543923959, guid: 8fa0f871aceca4a43b24fb79de82e44d, type: 3}
   RoomsTreasury:
-  - {fileID: 2109021751604581291, guid: 164fafd28d988b041960b563d7997419, type: 3}
+  - {fileID: 210824627396358949, guid: f229206520bdba949bdac64d11efd27d, type: 3}
+  - {fileID: 8776913247543923959, guid: 27cc5334cd83ecf4f9833b4f32dc8bf0, type: 3}
   RoomsBoss:
-  - {fileID: 9101450352262162651, guid: 3a9023704c625324e8fd46f602700485, type: 3}
+  - {fileID: 210824627396358949, guid: d18c1bb3b3ec06e468f459cc991ad22e, type: 3}
+  - {fileID: 8776913247543923959, guid: 82a348e3fee2de245a620667d45fe249, type: 3}
   roomDimensions: {x: 100, y: 100}
