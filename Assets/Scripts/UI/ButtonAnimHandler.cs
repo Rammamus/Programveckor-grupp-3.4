@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MainMenuHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
+public class ButtonAnimHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
 {
     [SerializeField] private float _verticalMoveAmount = 30f;
     [SerializeField] private float _moveTime = 0.1f;
@@ -16,6 +16,8 @@ public class MainMenuHandler : MonoBehaviour, IPointerEnterHandler, IPointerExit
     private TextMeshProUGUI buttonText;
     private string originalText;
 
+
+    public bool isMainMenu;
     private void Start()
     {
         _startPosition = transform.position;
@@ -65,19 +67,35 @@ public class MainMenuHandler : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log("Pointer Entered");
         // Optionally, you can trigger the animation here if desired
         if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
         _currentCoroutine = StartCoroutine(MoveButton(true));
 
-        buttonText.text = ("- " + buttonText.text + " -");
+        if (isMainMenu)
+        {
+            buttonText.text = ("- " + buttonText.text + " -");
+        }
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        Debug.Log("Pointer Exited");
         // Optionally, you can trigger the animation here if desired
         if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
         _currentCoroutine = StartCoroutine(MoveButton(false));
+        if (isMainMenu)
+        {
+            buttonText.text = originalText;
+        }
+        
+    }
 
+    private void OnDisable()
+    {
         buttonText.text = originalText;
+        transform.position = _startPosition;
+        transform.localScale = _startScale;
     }
 }

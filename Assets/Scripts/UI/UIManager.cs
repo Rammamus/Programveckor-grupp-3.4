@@ -51,10 +51,12 @@ public class UIManager : MonoBehaviour
             else if (isPaused)
             {
                 Resume(); // Resume the game if paused
+                isPaused = false;
             }
             else
             {
                 PauseGame(); // Pause the game if not paused
+                isPaused = true;
             }
         }
     }
@@ -69,6 +71,8 @@ public class UIManager : MonoBehaviour
             settingsMenu.SetActive(isSettingsActive);
 
             menuUI.SetActive(true);
+
+            
             
         }
         else if (isSettingsActive)
@@ -90,17 +94,15 @@ public class UIManager : MonoBehaviour
             
 
             isPaused = false;
+
+            Debug.Log("Resuming Game");
         }
     }
 
     public void QuitGame()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; // Stop play mode in the editor
-#else
-        Application.Quit(); // Quit the application
-#endif
-        Debug.Log("Quit the Game");
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 
     #endregion
@@ -111,6 +113,8 @@ public class UIManager : MonoBehaviour
 
         settingsMenu.SetActive(isSettingsActive); // Show settings menu
         pauseMenu.SetActive(false); // Hide pause menu
+
+        Debug.Log("Activating Settings");
     }
 
     public void PauseGame()
