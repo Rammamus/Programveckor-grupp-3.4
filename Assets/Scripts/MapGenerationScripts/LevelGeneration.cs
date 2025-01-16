@@ -15,9 +15,6 @@ public class LevelGeneration : MonoBehaviour
 
     public GameObject roomWhiteObj;
 
-    public DualGridTilemap wallLayer;
-    public DualGridTilemap groundLayer;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +29,6 @@ public class LevelGeneration : MonoBehaviour
         SetRoomDoors();
         DrawMap();
         GetComponent<SheetAssigner>().Assign(rooms);
-
-        wallLayer.enabled = true;
-        groundLayer.enabled = true;
     }
 
     // Update is called once per frame
