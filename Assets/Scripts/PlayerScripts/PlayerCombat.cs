@@ -17,6 +17,8 @@ public class PlayerCombat : MonoBehaviour
     public string weaponType;
     public bool isAttacking;
 
+    [SerializeField] GameObject[] colliders;
+
     [Header("HP Related")]
     public float hp;
     public float maxHP;
@@ -35,42 +37,46 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && !isAttacking)
         {
-            StartAttack(weaponType, "up", attackPower);
+            StartAttack(weaponType, "up");
         }
         if (Input.GetKeyDown(KeyCode.A) && !isAttacking)
         {
-            StartAttack(weaponType, "left", attackPower);
+            StartAttack(weaponType, "left");
         }
         if (Input.GetKeyDown(KeyCode.D) && !isAttacking)
         {
-            StartAttack(weaponType, "right", attackPower);
+            StartAttack(weaponType, "right");
         }
         if (Input.GetKeyDown(KeyCode.S) && !isAttacking)
         {
-            StartAttack(weaponType, "down", attackPower);
+            StartAttack(weaponType, "down");
         }
     }
 
-    public void StartAttack(string weaponType, string direction, float dmg)
+    public void StartAttack(string weaponType, string direction)
     {
         isAttacking = true;
         if (direction == "up")
         {
             animator.SetBool("isAttackingUp", true);
+            colliders[0].SetActive(true);
         }
         if (direction == "left")
         {
             sprite.flipX = true;
             animator.SetBool("isAttackingSide", true);
+            colliders[1].SetActive(true);
         }
         if (direction == "right")
         {
             sprite.flipX = false;
             animator.SetBool("isAttackingSide", true);
+            colliders[2].SetActive(true);
         }
         if (direction == "down")
         {
             animator.SetBool("isAttackingDown", true);
+            colliders[3].SetActive(true);
         }
     }
 
@@ -80,6 +86,10 @@ public class PlayerCombat : MonoBehaviour
         animator.SetBool("isAttackingSide", false);
         animator.SetBool("isAttackingSide", false);
         animator.SetBool("isAttackingDown", false);
+        colliders[0].SetActive(false);
+        colliders[1].SetActive(false);
+        colliders[2].SetActive(false);
+        colliders[3].SetActive(false);
         isAttacking = false;
     }
 
