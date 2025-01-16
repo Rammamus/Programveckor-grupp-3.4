@@ -148,7 +148,11 @@ public class StatBonus
                 }
                 break;
             case BonusType.Power:
+                playerCombat.attackPower += bonusValue;
                 //playerCombat.attackpower += bonusValue;
+                break;
+            case BonusType.Haste;
+                playerCombat.haste += bonusValue;
                 break;
                 // Add more cases for other bonus types as needed
         }
