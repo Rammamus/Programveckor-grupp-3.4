@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 6800535800135863425}
   - component: {fileID: 4541501569967614796}
   - component: {fileID: 5615766648148688868}
-  m_Layer: 0
+  - component: {fileID: 2166473791262233701}
+  - component: {fileID: 8267168362207993009}
+  m_Layer: 2
   m_Name: Salamander
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +100,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.6666667
-  m_Speed: 3
+  m_Speed: 2
   m_Acceleration: 99999
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -123,6 +125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 4
   agent: {fileID: 0}
   canSeePlayer: 0
   canMove: 0
@@ -167,3 +172,62 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &2166473791262233701
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116912072184441068}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.2222223, y: 0.6944444}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.2222223, y: 0.6944444}
+  m_EdgeRadius: 0
+--- !u!114 &8267168362207993009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116912072184441068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6173f4ba62edca04a982d44f9e7bc29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 263a08ad7bcc333458fbc21fff6d5ddd, type: 2}
+  duration: 0.1
