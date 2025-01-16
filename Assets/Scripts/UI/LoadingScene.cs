@@ -1,49 +1,54 @@
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LoadingScene : MonoBehaviour
 {
+
+    public static LoadingScene instance;
     public GameObject loadingScreen;
     public Image loadingBarFill;
 
-    public void LoadScene(int sceneId)
+    private float _target;
+
+    private void Awake()
     {
-        StartCoroutine(LoadSceneAsync(sceneId));
-    }
-
-    IEnumerator LoadSceneAsync(int sceneId)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
-
-        loadingScreen.SetActive(true);
-
-        while (!operation.isDone)
+        if (instance == null)
         {
-            // Log the raw progress value
-            Debug.Log($"Raw Loading Progress: {operation.progress}");
+            instance = this;
+            
+        }
+        else
+        {
+            Destroy(gameObject);
 
-            // Calculate the progress value
-            float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
-            loadingBarFill.fillAmount = progressValue;
-
-            Debug.Log($"Setting Fill Amount: {progressValue}"); // Debug log to check fill amount
-
-            // Check if the operation is done
-            if (operation.progress >= 0.9f)
-            {
-                // Wait for a moment before activating the scene
-                yield return new WaitForSeconds(1f); // Adjust the delay as needed
-
-                // Allow the scene to activate
-                operation.allowSceneActivation = true;
-            }
-
-            yield return null;
         }
     }
 
+    public async void LoadScene(string sceneName)
+    {
+        var scene = SceneManager.LoadSceneAsync(sceneName);
 
+        loadingScreen.SetActive(true);
+
+        do
+        {
+            await Task.Delay(100);
+            _target = scene.progress;
+        } while (scene.progress < 0.9f);
+
+        await Task.Delay(1000);
+
+
+        scene.allowSceneActivation = true;
+        loadingScreen.SetActive(false);
+    }
+
+    private void Update()
+    {
+        loadingBarFill.fillAmount = Mathf.MoveTowards(loadingBarFill.fillAmount, _target, 3 * Time.deltaTime);
+    }
 }
-
