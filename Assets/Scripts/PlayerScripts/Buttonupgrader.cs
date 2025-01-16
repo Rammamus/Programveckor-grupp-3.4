@@ -2,20 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Buttonupgrader : MonoBehaviour
 {
     public string Upgradepanel;
     public string Playername;
-    public GameObject player;
-    public GameObject panel;
+    private GameObject player;
+    private GameObject panel;
+    public string Replacepanel;
+    public string upgradeButton1;
+    public string upgradeButton2;
+    public string upgradeButton3;
+    private PlayerUppgrades playerUppgrade;
+    private int indexToReplace;
+    private StatBonus newBonus;
+    public GameObject replacepanel1;
+    private GameObject button1;
+    private GameObject button2;
+    private GameObject button3;
 
-   
+
 
     public void Update()
     {
         panel = GameObject.Find(Upgradepanel);
         player = GameObject.Find(Playername);
+        replacepanel1 = GameObject.Find(Replacepanel);
+        button1 = GameObject.Find(upgradeButton1);
+        button2 = GameObject.Find(upgradeButton1);
+        button3 = GameObject.Find(upgradeButton1);
+        playerUppgrade = player.GetComponent<PlayerUppgrades>();
+
+
+        if (panel == null) Debug.LogError("Panel not found: " + Upgradepanel);
+        if (player == null) Debug.LogError("Player not found: " + Playername);
+        if (replacepanel1 == null) Debug.LogError("Replacement panel not found: " + Replacepanel);
+        if (button1 == null) Debug.LogError("Button 1 not found: " + upgradeButton1);
+        if (button2 == null) Debug.LogError("Button 2 not found: " + upgradeButton2);
+        if (button3 == null) Debug.LogError("Button 3 not found: " + upgradeButton3);
+        if (playerUppgrade == null) Debug.LogError("PlayerUppgrades component not found on player.");
     }
     public void AddStatBonus(string bonusName, float bonusValue, BonusType bonusType)
     {
@@ -35,41 +61,71 @@ public class Buttonupgrader : MonoBehaviour
         else
         {
             // När alla slots är fulla så försöker den replacea
-             ReplaceStatBonus(newBonus);
+            playerUppgrade.Openreplacementpanel();
+            //panel.SetActive(false);
+
+            ShowReplacementMenu();
+           
         }
     }
-    private void ReplaceStatBonus(StatBonus newBonus)
+    public void ShowReplacementMenu()
     {
-        PlayerCombat playerCombat = player.GetComponent<PlayerCombat>();
-
-        PlayerUppgrades playerUppgrade = player.GetComponent<PlayerUppgrades>();
-
-        // Display current bonuses to the player (you can implement this in your UI)
-        Debug.Log("Current bonuses:");
-        for (int i = 0; i < playerUppgrade.statBonuses.Count; i++)
+        if (playerUppgrade == null)
         {
-            Debug.Log($"{i + 1}: {playerUppgrade.statBonuses[i].bonusName}");
+            Debug.LogError("playerUppgrade is null! Make sure the PlayerUppgrades component is attached to the player.");
+            return; // Exit the method if playerUppgrade is null
+        }
+        if (playerUppgrade.statBonuses.Count > 0)
+        {
+            button1.GetComponentInChildren<Text>().text = playerUppgrade.statBonuses[0].bonusName;
+            button1.gameObject.SetActive(true);
+        }
+        else
+        {
+            button1.gameObject.SetActive(false);
         }
 
-        // Here you would implement a way to get the player's choice.
-        // For example, you could use a UI dropdown or buttons to let the player select which bonus to replace.
-        // For this example, let's assume the player chooses to replace the first bonus (index 0).
-        int indexToReplace = 0; // Replace this with actual player input
+        if (playerUppgrade.statBonuses.Count > 1)
+        {
+            button2.GetComponentInChildren<Text>().text = playerUppgrade.statBonuses[1].bonusName;
+            button2.gameObject.SetActive(true);
+        }
+        else
+        {
+            button2.gameObject.SetActive(false);
+        }
 
-        // Remove the old bonus
-        StatBonus oldBonus = playerUppgrade.statBonuses[indexToReplace];
-        playerUppgrade.statBonuses.RemoveAt(indexToReplace);
-        Debug.Log(oldBonus.bonusName + " replaced with " + newBonus.bonusName);
+        if (playerUppgrade.statBonuses.Count > 2)
+        {
+            button3.GetComponentInChildren<Text>().text = playerUppgrade.statBonuses[2].bonusName;
+            button3.gameObject.SetActive(true);
+        }
+        else
+        {
+            button3.gameObject.SetActive(false);
+        } // Show the panel
+    }
+    public void OnUpgradeButtonClicked(int index)
+    {
+        indexToReplace = index; // Set the index of the upgrade to replace
+        ReplaceStatBonus(newBonus, indexToReplace);
+        playerUppgrade.Closereplacementpanel(); // Hide the panel after the replacement
+    }
 
-        oldBonus.RemoveBonus(playerCombat);
-
-        // Add the new bonus
-        playerUppgrade.statBonuses.Add(newBonus);
-        ApplyBonusToPlayer(newBonus);
+    private void ReplaceStatBonus(StatBonus newBonus, int index)
+    {
+        if (index >= 0 && index < playerUppgrade.statBonuses.Count)
+        {
+            playerUppgrade.statBonuses[index] = newBonus; // Replace the old bonus with the new one
+            Debug.Log("Replaced bonus at index " + index + " with " + newBonus.bonusName);
+            ApplyBonusToPlayer(newBonus); // Apply the new bonus to the player
+        }
         HealthBarScript healthBar = FindObjectOfType<HealthBarScript>();
         healthBar.DrawHearts();
-
     }
+   
+
+
     private void ApplyBonusToPlayer(StatBonus bonus)
     {
         PlayerCombat playerCombat = player.GetComponent<PlayerCombat>();
@@ -194,6 +250,7 @@ public class StatBonus
         {
             case BonusType.MaxHP:
                 playerCombat.maxHP -= bonusValue;
+                Debug.Log("Does work");
                 break;
             case BonusType.Speed:
                 NavMeshAgent agent = playerCombat.GetComponent<NavMeshAgent>();
