@@ -95,14 +95,24 @@ public class PlayerCombat : MonoBehaviour
 
     public void PlayerTakeDMG(float dmg)
     {
+        hp -= dmg;
         OnPlayerDamaged?.Invoke();
         HealthBarScript.FindObjectOfType<HealthBarScript>().DrawHearts();
-        hp -= dmg;
 
         string hexColor = "#FF3939";
         if (ColorUtility.TryParseHtmlString(hexColor, out Color color))
         {
             flashEffect.Flash(color);
         }
+
+        if (hp <= 0)
+        {
+            animator.SetBool("isDead", true);
+        }
+    }
+
+    public void PlayerDeath()
+    {
+        //idk send back to the lobby
     }
 }
