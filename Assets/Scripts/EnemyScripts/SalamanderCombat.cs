@@ -14,6 +14,14 @@ public class SalamanderCombat : EnemyCombat
     public override void Update()
     {
         base.Update();
+        if (gameObject.GetComponent<EnemyMovement>().agent.velocity.x != 0 || gameObject.GetComponent<EnemyMovement>().agent.velocity.y != 0)
+        {
+            animator.SetFloat("Velocity", 1);
+        }
+        else
+        {
+            animator.SetFloat("Velocity", 0);
+        }
     }
 
     public override void StartAttack(float dmg)
