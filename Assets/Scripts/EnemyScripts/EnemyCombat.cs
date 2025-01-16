@@ -16,6 +16,7 @@ public class EnemyCombat : MonoBehaviour
     public float hp;
     public float maxHP;
 
+    EntityFlash flashEffect;
     public PlayerCombat player;
     Animator animator;
     EnemyMovement enemyMovement;
@@ -23,6 +24,7 @@ public class EnemyCombat : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
+        flashEffect = GetComponent<EntityFlash>();
         enemyMovement = GetComponent<EnemyMovement>();
         animator = GetComponent<Animator>();
         attackSpeedTimer = attackSpeed;
@@ -86,5 +88,10 @@ public class EnemyCombat : MonoBehaviour
     {
         isAttacking = false;
         animator.SetBool("isAttacking", false);
+    }
+
+    public virtual void TakeDamage()
+    {
+        flashEffect.Flash(Color.white);
     }
 }

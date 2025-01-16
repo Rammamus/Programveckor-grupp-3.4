@@ -6,6 +6,7 @@ using System;
 
 public class PlayerCombat : MonoBehaviour
 {
+    EntityFlash flashEffect;
     public static event Action OnPlayerDamaged;
     Animator animator;
     SpriteRenderer sprite;
@@ -23,6 +24,7 @@ public class PlayerCombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        flashEffect = GetComponent<EntityFlash>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         hp = maxHP;
@@ -86,5 +88,11 @@ public class PlayerCombat : MonoBehaviour
         OnPlayerDamaged?.Invoke();
         HealthBarScript.FindObjectOfType<HealthBarScript>().DrawHearts();
         hp -= dmg;
+
+        string hexColor = "#FF3939";
+        if (ColorUtility.TryParseHtmlString(hexColor, out Color color))
+        {
+            flashEffect.Flash(color);
+        }
     }
 }
