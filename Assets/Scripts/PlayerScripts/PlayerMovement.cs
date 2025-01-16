@@ -35,14 +35,18 @@ public class PlayerMovement : MonoBehaviour
             mouseDown = false;
         }
 
-        if (mouseDown)
+        else if (mouseDown)
         {
             lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             isMoving = true;
             
         }
 
-        if (isMoving && (Vector2)transform.position != lastClickedPos)
+        if (GetComponent<PlayerCombat>().isAttacking == true)
+        {
+            agent.SetDestination(transform.position);
+        }
+        else if (isMoving && (Vector2)transform.position != lastClickedPos)
         {
             float step = speed * Time.deltaTime;
             agent.SetDestination(lastClickedPos);

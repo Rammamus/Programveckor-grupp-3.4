@@ -16,9 +16,9 @@ public class SalamanderCombat : EnemyCombat
         base.Update();
     }
 
-    public override void AttackPlayer(float dmg)
+    public override void StartAttack(float dmg)
     {
-        base.AttackPlayer(dmg);
+        base.StartAttack(dmg);
         player.PlayerTakeDMG(attackDMG);
     }
 }

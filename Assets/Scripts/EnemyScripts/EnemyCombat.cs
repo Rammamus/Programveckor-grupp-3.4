@@ -10,16 +10,21 @@ public class EnemyCombat : MonoBehaviour
     float attackSpeedTimer;
     public float attackRange;
     public bool inAttkRange;
+    public bool isAttacking;
 
     [Header("HP Related")]
     public float hp;
     public float maxHP;
 
     public PlayerCombat player;
+    Animator animator;
+    EnemyMovement enemyMovement;
 
     // Start is called before the first frame update
     public virtual void Start()
     {
+        enemyMovement = GetComponent<EnemyMovement>();
+        animator = GetComponent<Animator>();
         attackSpeedTimer = attackSpeed;
         hp = maxHP;
         player = FindObjectOfType<PlayerCombat>();
@@ -30,7 +35,7 @@ public class EnemyCombat : MonoBehaviour
     {
         if (inAttkRange && attackSpeedTimer >= attackSpeed)
         {
-            AttackPlayer(attackDMG);
+            StartAttack(attackDMG);
             attackSpeedTimer = 0;
         }
 
@@ -42,6 +47,16 @@ public class EnemyCombat : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (inAttkRange)
+        {
+            gameObject.GetComponent<EnemyMovement>().canMove = false;
+            GetComponent<EnemyMovement>().agent.SetDestination(transform.position);
+        }
+        else
+        {
+            gameObject.GetComponent<EnemyMovement>().canMove = true;
+        }
+
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, attackRange);
         if (ray.collider != null)
         {
@@ -61,8 +76,15 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
-    public virtual void AttackPlayer(float dmg)
+    public virtual void StartAttack(float dmg)
     {
+        isAttacking = true;
+        animator.SetBool("isAttacking", true);
+    }
 
+    public virtual void StopAttack()
+    {
+        isAttacking = false;
+        animator.SetBool("isAttacking", false);
     }
 }

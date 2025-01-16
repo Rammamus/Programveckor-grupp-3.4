@@ -21,6 +21,7 @@ public class HealthBarScript : MonoBehaviour
 
     private void Start()
     {
+        playerHealth = FindObjectOfType<PlayerCombat>();
         DrawHearts();
     }
 
