@@ -18,7 +18,8 @@ public class EnemyCombat : MonoBehaviour
 
     EntityFlash flashEffect;
     public PlayerCombat player;
-    Animator animator;
+    public Animator animator;
+    SpriteRenderer sprite;
     EnemyMovement enemyMovement;
 
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class EnemyCombat : MonoBehaviour
         attackSpeedTimer = attackSpeed;
         hp = maxHP;
         player = FindObjectOfType<PlayerCombat>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -82,6 +84,14 @@ public class EnemyCombat : MonoBehaviour
     {
         isAttacking = true;
         animator.SetBool("isAttacking", true);
+        if (player.transform.position.x > transform.position.x)
+        {
+            sprite.flipX = true;
+        }
+        else if (player.transform.position.x < transform.position.x)
+        {
+            sprite.flipX = false;
+        }
     }
 
     public virtual void StopAttack()
@@ -92,7 +102,17 @@ public class EnemyCombat : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
+        hp -= damage;
         flashEffect.Flash(Color.white);
+        if (hp <= 0)
+        {
+            enemyMovement.agent.isStopped = true;
+        }
+    }
+
+    public virtual void Die()
+    {
+        Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

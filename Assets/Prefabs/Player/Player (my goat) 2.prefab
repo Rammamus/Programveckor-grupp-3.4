@@ -417,6 +417,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  isDashing: 0
+  canDash: 0
+  dashCooldown: 2
+  dashSpeed: 7
+  moveCursor: {fileID: 4573978440024777315, guid: f92bcc28cfce45340a1ac6b894517206, type: 3}
 --- !u!50 &1931186884610507558
 Rigidbody2D:
   serializedVersion: 4
@@ -478,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3998e0582d8e494e864c715193b815e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 0
+  attackPower: 1
   attackSpeed: 0
   weaponType: 
   isAttacking: 0

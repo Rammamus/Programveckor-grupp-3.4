@@ -22,4 +22,13 @@ public class FireflyCombat : EnemyCombat
         base.StartAttack(dmg);
         Instantiate(prefab, transform.position, Quaternion.identity);
     }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        if (hp <= 0)
+        {
+            animator.Play("Firefly Die");
+        }
+    }
 }

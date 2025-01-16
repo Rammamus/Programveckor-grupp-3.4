@@ -38,6 +38,7 @@ public class HealthBarScript : MonoBehaviour
         for (int i = 0; i < hearts.Count; i++)
         {
             int heartStatusRemainder = (int)Mathf.Clamp(playerHealth.hp - (i * 2), 0, 2);
+            print("player hp: " + playerHealth.hp);
             hearts[i].SetHeartImage((HeartStatus)heartStatusRemainder);
             hearts[i].GetComponent<Image>().enabled = true;
             hearts[i].GetComponent<LayoutElement>().enabled = true;
