@@ -148,9 +148,10 @@ MonoBehaviour:
   attackRange: 3
   inAttkRange: 0
   isAttacking: 0
-  hp: 0
-  maxHP: 0
+  hp: 4
+  maxHP: 4
   player: {fileID: 0}
+  animator: {fileID: 0}
   prefab: {fileID: 881651266897205421, guid: 751d7d2b731857c46b609b83fe636ecc, type: 3}
 --- !u!95 &7385204730537669740
 Animator:

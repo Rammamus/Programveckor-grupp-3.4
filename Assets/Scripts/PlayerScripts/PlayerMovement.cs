@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,19 +7,27 @@ public class PlayerMovement : MonoBehaviour
     Vector2 lastClickedPos;
     bool isMoving;
     bool mouseDown;
+    public bool isDashing;
+    public bool canDash;
+    public float dashCooldown;
+    public float dashSpeed;
+    float dashTimer;
 
     [SerializeField] GameObject moveCursor;
     NavMeshAgent agent;
     Animator animator;
     SpriteRenderer playerSprite;
+    Rigidbody2D rb;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         playerSprite = GetComponent<SpriteRenderer>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        dashTimer = dashCooldown;
     }
 
     void Update()
@@ -41,19 +46,50 @@ public class PlayerMovement : MonoBehaviour
             mouseDown = false;
         }
 
-        else if (mouseDown)
+        if (mouseDown)
         {
             lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             isMoving = true;
-            
+        }
+
+        if (dashTimer < dashCooldown)
+        {
+            dashTimer += Time.deltaTime;
+            canDash = false;
+        }
+        else if (dashTimer >= dashCooldown)
+        {
+            canDash = true;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.F) && canDash)
+        {
+            isDashing = true;
+            StartDash();
         }
 
         if (GetComponent<PlayerCombat>().isAttacking == true)
         {
-            agent.SetDestination(transform.position);
+            agent.isStopped = true;
+            isMoving = false;
         }
-        else if (isMoving && (Vector2)transform.position != lastClickedPos)
+
+        if (isDashing)
         {
+            agent.SetDestination(transform.position);
+            if (rb.velocity.x < 0)
+            {
+                playerSprite.flipX = true;
+            }
+            else if (rb.velocity.x > 0)
+            {
+                playerSprite.flipX = false;
+            }
+        }
+        
+        if (isMoving && (Vector2)transform.position != lastClickedPos)
+        {
+            agent.isStopped = false;
             float step = speed * Time.deltaTime;
             agent.SetDestination(lastClickedPos);
             animator.SetFloat("xVelocity", 1);
@@ -75,5 +111,29 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("xVelocity", 0);
         }
+    }
+
+    public void StartDash()
+    {
+        agent.isStopped = true;
+        agent.velocity = new Vector3(0, 0, 0);
+        rb.velocity = new Vector2(0, 0);
+        isDashing = true;
+        isMoving = false;
+        animator.SetBool("isDashing", true);
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0;
+        Vector2 dashDirection = (mousePosition - transform.position).normalized;
+        rb.velocity = dashDirection * dashSpeed;
+    }
+
+    public void EndDash()
+    {
+        isDashing = false;
+        rb.velocity = new Vector2(0, 0);
+        dashTimer = 0;
+        lastClickedPos = (Vector2)transform.position;
+        animator.SetBool("isDashing", false);
+        agent.isStopped = false;
     }
 }

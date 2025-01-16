@@ -18,7 +18,7 @@ public class EnemyCombat : MonoBehaviour
 
     EntityFlash flashEffect;
     public PlayerCombat player;
-    Animator animator;
+    public Animator animator;
     EnemyMovement enemyMovement;
 
     // Start is called before the first frame update
@@ -92,7 +92,13 @@ public class EnemyCombat : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
+        hp -= damage;
         flashEffect.Flash(Color.white);
+    }
+
+    public virtual void Die()
+    {
+        Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

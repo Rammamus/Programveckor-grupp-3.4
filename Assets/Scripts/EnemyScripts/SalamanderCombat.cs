@@ -21,4 +21,13 @@ public class SalamanderCombat : EnemyCombat
         base.StartAttack(dmg);
         player.PlayerTakeDMG(attackDMG);
     }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        if (hp <= 0)
+        {
+            animator.Play("Salamander Die");
+        }
+    }
 }
