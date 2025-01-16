@@ -90,8 +90,17 @@ public class EnemyCombat : MonoBehaviour
         animator.SetBool("isAttacking", false);
     }
 
-    public virtual void TakeDamage()
+    public virtual void TakeDamage(float damage)
     {
         flashEffect.Flash(Color.white);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PlayerAttack")
+        {
+            TakeDamage(player.attackPower);
+
+        }
     }
 }
