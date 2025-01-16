@@ -4753,6 +4753,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3169575021863286966, guid: ff8b4d8867de7a94aa277cb5bebe23c0, type: 3}
+      propertyPath: moveCursor
+      value: 
+      objectReference: {fileID: 4573978440024777315, guid: f92bcc28cfce45340a1ac6b894517206, type: 3}
     - target: {fileID: 8193938343495857524, guid: ff8b4d8867de7a94aa277cb5bebe23c0, type: 3}
       propertyPath: m_Name
       value: Player (the true goat)

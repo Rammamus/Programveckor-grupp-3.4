@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     bool isMoving;
     bool mouseDown;
 
+    [SerializeField] GameObject moveCursor;
     NavMeshAgent agent;
     Animator animator;
     SpriteRenderer playerSprite;
@@ -29,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             mouseDown = true;
+
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition.z = Camera.main.nearClipPlane;
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            Instantiate(moveCursor, worldPosition, Quaternion.identity);
         }
         if (Input.GetKeyUp(KeyCode.Mouse1))
         {
