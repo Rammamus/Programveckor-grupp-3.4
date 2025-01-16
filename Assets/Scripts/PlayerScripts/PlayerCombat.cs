@@ -10,7 +10,7 @@ public class PlayerCombat : MonoBehaviour
     Animator animator;
 
     [Header("Attack Related")]
-    public float attackDamage;
+    public float attackPower;
     public float attackSpeed;
     public string weaponType;
     public bool isAttacking;
@@ -29,22 +29,33 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !isAttacking)
+        if (Input.GetKeyDown(KeyCode.W) && !isAttacking)
         {
-            StartAttack(weaponType, "up", 5);
+            StartAttack(weaponType, "up", attackPower);
         }
-        Debug.Log("Current State: " + animator.GetCurrentAnimatorStateInfo(0).IsName("Player AttackUp"));
+        if (Input.GetKeyDown(KeyCode.A) && !isAttacking)
+        {
+            StartAttack(weaponType, "left", attackPower);
+        }
+        if (Input.GetKeyDown(KeyCode.D) && !isAttacking)
+        {
+            StartAttack(weaponType, "right", attackPower);
+        }
+        if (Input.GetKeyDown(KeyCode.S) && !isAttacking)
+        {
+            StartAttack(weaponType, "down", attackPower);
+        }
 
-        if (isAttacking && !animator.GetCurrentAnimatorStateInfo(0).IsTag("Player AttackUp"))
-        {
-            animator.SetBool("isAttackingUp", false);
-            StopAttack();
-        }
     }
 
     public void StartAttack(string weaponType, string direction, float dmg)
     {
+        isAttacking = true;
         if (direction == "up")
+        {
+            animator.SetBool("isAttackingUp", true);
+        }
+        if (direction == "left")
         {
             animator.SetBool("isAttackingUp", true);
         }
