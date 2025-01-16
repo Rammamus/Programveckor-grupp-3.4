@@ -148,8 +148,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Upgradepanel: Upgradepanel
   Playername: Player (my goat) 2
-  player: {fileID: 0}
-  panel: {fileID: 0}
+  Replacepanel: Replacepanel
+  upgradeButton1: Upgrade1
+  upgradeButton2: Upgrade2
+  upgradeButton3: Upgrade3
+  replacepanel1: {fileID: 0}
 --- !u!1 &6907877075796141854
 GameObject:
   m_ObjectHideFlags: 0
