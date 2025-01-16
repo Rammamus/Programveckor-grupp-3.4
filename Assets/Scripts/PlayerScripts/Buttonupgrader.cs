@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Buttonupgrader : MonoBehaviour
 {
@@ -8,142 +9,157 @@ public class Buttonupgrader : MonoBehaviour
     public string Playername;
     public GameObject player;
     public GameObject panel;
+
+   
+
     public void Update()
     {
         panel = GameObject.Find(Upgradepanel);
         player = GameObject.Find(Playername);
     }
-    public void power1()
+    public void AddStatBonus(string bonusName, float bonusValue, BonusType bonusType)
     {
-        if (panel != null)
+        PlayerUppgrades playerUppgrade = player.GetComponent<PlayerUppgrades>();
+        int pmax = PlayerUppgrades.maxSlots;
+        Debug.Log("Attempting to add bonus: " + bonusName); // Debug log
+
+        
+        StatBonus newBonus = new StatBonus(bonusName, bonusValue, bonusType);
+
+        if (playerUppgrade.statBonuses.Count < pmax)
         {
-            panel.SetActive(false);
-            Debug.Log(Upgradepanel + "has been deactivated.");
+            playerUppgrade.statBonuses.Add(newBonus);
+            Debug.Log(bonusName + " added. Total bonuses: " + playerUppgrade.statBonuses.Count);
+            ApplyBonusToPlayer(newBonus);
         }
         else
         {
-            Debug.LogWarning("Object with name " + Upgradepanel + " not found.");
+            // När alla slots är fulla så försöker den replacea
+           // ReplaceStatBonus(newBonus);
         }
-          
+    }
+    private void ApplyBonusToPlayer(StatBonus bonus)
+    {
+        PlayerCombat playerCombat = player.GetComponent<PlayerCombat>();
+        if (playerCombat != null)
+        {
+            bonus.ApplyBonus(playerCombat); // Apply the bonus to the player's combat stats
+        }
+        else
+        {
+            Debug.LogWarning("PlayerCombat component not found on player.");
+        }
+    }
+    public void power1()
+    {
+        AddStatBonus("Power Bonus 1", 2.0f, BonusType.Power);
+        panel.SetActive(false);
+
     }
     public void power2()
     {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-            Debug.Log(Upgradepanel + "has been deactivated.");
-        }
-        else
-        {
-            Debug.LogWarning("Object with name " + Upgradepanel + " not found.");
-        }
+        AddStatBonus("Power Bonus 2", 4.0f, BonusType.Power);
+        panel.SetActive(false);
     }
     public void power3()
     {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-            Debug.Log(Upgradepanel + "has been deactivated.");
-        }
-        else
-        {
-            Debug.LogWarning("Object with name " + Upgradepanel + " not found.");
-        }
+        AddStatBonus("Power Bonus 3", 6.0f, BonusType.Power);
+        panel.SetActive(false);
     }
     public void haste1()
     {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-            Debug.Log(Upgradepanel + "has been deactivated.");
-        }
-        else
-        {
-            Debug.LogWarning("Object with name " + Upgradepanel + " not found.");
-        }
+        AddStatBonus("Haste Bonus 1", 1.0f, BonusType.Haste);
+        panel.SetActive(false);
     }
     public void haste2()
     {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-            Debug.Log(Upgradepanel + "has been deactivated.");
-        }
-        else
-        {
-            Debug.LogWarning("Object with name " + Upgradepanel + " not found.");
-        }
+        AddStatBonus("Haste Bonus 1", 2.0f, BonusType.Haste);
+        panel.SetActive(false);
     }
     public void haste3()
     {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-            Debug.Log(Upgradepanel + "has been deactivated.");
-        }
-        else
-        {
-            Debug.LogWarning("Object with name " + Upgradepanel + " not found.");
-        }
+        AddStatBonus("Haste Bonus 1", 4.0f, BonusType.Haste);
+        panel.SetActive(false);
     }
     public void speed1()
     {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-            Debug.Log(Upgradepanel + "has been deactivated.");
-        }
-        else
-        {
-            Debug.LogWarning("Object with name " + Upgradepanel + " not found.");
-        }
+        AddStatBonus("Speed Bonus 1", 0.5f, BonusType.Speed);
+        panel.SetActive(false);
     }
     public void speed2()
     {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-            Debug.Log(Upgradepanel + "has been deactivated.");
-        }
-        else
-        {
-            Debug.LogWarning("Object with name " + Upgradepanel + " not found.");
-        }
+        AddStatBonus("Speed Bonus 2", 1.0f, BonusType.Speed);
+        panel.SetActive(false);
     }
     public void speed3()
     {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-            Debug.Log(Upgradepanel + "has been deactivated.");
-        }
-        else
-        {
-            Debug.LogWarning("Object with name " + Upgradepanel + " not found.");
-        }
+        AddStatBonus("Speed Bonus 3", 1.5f, BonusType.Speed);
+        panel.SetActive(false);
     }
     public void maxhp1()
     {
-        PlayerCombat playerCombat = player.GetComponent<PlayerCombat>();
-        playerCombat.maxHP += 2;
+        AddStatBonus("Max HP Bonus 1", 2.0f, BonusType.MaxHP);
         HealthBarScript healthBar = FindObjectOfType<HealthBarScript>();
         healthBar.DrawHearts();
         panel.SetActive(false);
     }
     public void maxhp2()
     {
-        PlayerCombat playerCombat = player.GetComponent<PlayerCombat>();
-        playerCombat.maxHP += 4;
+        AddStatBonus("Max HP Bonus 2", 4.0f, BonusType.MaxHP);
         HealthBarScript healthBar = FindObjectOfType<HealthBarScript>();
         healthBar.DrawHearts();
         panel.SetActive(false);
     }
     public void maxhp3()
     {
-        PlayerCombat playerCombat = player.GetComponent<PlayerCombat>();
-        playerCombat.maxHP += 6;
+        AddStatBonus("Max HP Bonus 3", 6.0f, BonusType.MaxHP);
         HealthBarScript healthBar = FindObjectOfType<HealthBarScript>();
         healthBar.DrawHearts();
         panel.SetActive(false);
     }
+
+}
+[System.Serializable]
+public class StatBonus
+{
+    public string bonusName; // Name of the bonus
+    public float bonusValue; // Value of the bonus
+    public BonusType bonusType; // Type of bonus
+
+    public StatBonus(string name, float value, BonusType type)
+    {
+        bonusName = name;
+        bonusValue = value;
+        bonusType = type;
+    }
+
+    public void ApplyBonus(PlayerCombat playerCombat)
+    {
+        switch (bonusType)
+        {
+            case BonusType.MaxHP:
+                playerCombat.maxHP += bonusValue;
+                break;
+            case BonusType.Speed:
+                NavMeshAgent agent = playerCombat.GetComponent<NavMeshAgent>();
+                if (agent != null)
+                {
+                    agent.speed += bonusValue;
+                }
+                break;
+            case BonusType.Power:
+                //playerCombat.attackpower += bonusValue;
+                break;
+                // Add more cases for other bonus types as needed
+        }
+    }
+}
+
+public enum BonusType
+{
+    MaxHP,
+    Speed,
+    Power,
+    Haste,
+    // Add other bonus types here
 }
