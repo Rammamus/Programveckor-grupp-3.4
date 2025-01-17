@@ -15,12 +15,12 @@ public class Buttonupgrader : MonoBehaviour
     public string upgradeButton2;
     public string upgradeButton3;
     private PlayerUppgrades playerUppgrade;
-    private int indexToReplace;
+    //private int indexToReplace;
     private StatBonus newBonus;
-    public GameObject replacepanel1;
-    private GameObject button1;
-    private GameObject button2;
-    private GameObject button3;
+    //public GameObject replacepanel1;
+    //private GameObject button1;
+    //private GameObject button2;
+    //private GameObject button3;
 
 
 
@@ -28,20 +28,14 @@ public class Buttonupgrader : MonoBehaviour
     {
         panel = GameObject.Find(Upgradepanel);
         player = GameObject.Find(Playername);
-        replacepanel1 = GameObject.Find(Replacepanel);
-        button1 = GameObject.Find(upgradeButton1);
-        button2 = GameObject.Find(upgradeButton1);
-        button3 = GameObject.Find(upgradeButton1);
+        //replacepanel1 = GameObject.Find(Replacepanel);
+       // button1 = GameObject.Find(upgradeButton1);
+        //button2 = GameObject.Find(upgradeButton1);
+        //button3 = GameObject.Find(upgradeButton1);
         playerUppgrade = player.GetComponent<PlayerUppgrades>();
 
 
-        if (panel == null) Debug.LogError("Panel not found: " + Upgradepanel);
-        if (player == null) Debug.LogError("Player not found: " + Playername);
-        if (replacepanel1 == null) Debug.LogError("Replacement panel not found: " + Replacepanel);
-        if (button1 == null) Debug.LogError("Button 1 not found: " + upgradeButton1);
-        if (button2 == null) Debug.LogError("Button 2 not found: " + upgradeButton2);
-        if (button3 == null) Debug.LogError("Button 3 not found: " + upgradeButton3);
-        if (playerUppgrade == null) Debug.LogError("PlayerUppgrades component not found on player.");
+        
     }
     public void AddStatBonus(string bonusName, float bonusValue, BonusType bonusType)
     {
@@ -61,14 +55,14 @@ public class Buttonupgrader : MonoBehaviour
         else
         {
             // När alla slots är fulla så försöker den replacea
-            playerUppgrade.Openreplacementpanel();
+            //playerUppgrade.Openreplacementpanel();
             //panel.SetActive(false);
-
-            ShowReplacementMenu();
+            ReplaceStatBonus(newBonus);
+            //ShowReplacementMenu();
            
         }
     }
-    public void ShowReplacementMenu()
+    /*public void ShowReplacementMenu()
     {
         if (playerUppgrade == null)
         {
@@ -110,20 +104,38 @@ public class Buttonupgrader : MonoBehaviour
         indexToReplace = index; // Set the index of the upgrade to replace
         ReplaceStatBonus(newBonus, indexToReplace);
         playerUppgrade.Closereplacementpanel(); // Hide the panel after the replacement
-    }
+    }*/
 
-    private void ReplaceStatBonus(StatBonus newBonus, int index)
+    private void ReplaceStatBonus(StatBonus newBonus)
     {
-        if (index >= 0 && index < playerUppgrade.statBonuses.Count)
+        PlayerCombat playerCombat = player.GetComponent<PlayerCombat>();
+
+        PlayerUppgrades playerUppgrade = player.GetComponent<PlayerUppgrades>();
+
+        // Display current bonuses to the player (you can implement this in your UI)
+        Debug.Log("Current bonuses:");
+        for (int i = 0; i < playerUppgrade.statBonuses.Count; i++)
         {
-            playerUppgrade.statBonuses[index] = newBonus; // Replace the old bonus with the new one
-            Debug.Log("Replaced bonus at index " + index + " with " + newBonus.bonusName);
-            ApplyBonusToPlayer(newBonus); // Apply the new bonus to the player
+            Debug.Log($"{i + 1}: {playerUppgrade.statBonuses[i].bonusName}");
         }
+
+        int indexToReplace = 0; 
+
+        // Remove the old bonus
+        StatBonus oldBonus = playerUppgrade.statBonuses[indexToReplace];
+        playerUppgrade.statBonuses.RemoveAt(indexToReplace);
+        Debug.Log(oldBonus.bonusName + " replaced with " + newBonus.bonusName);
+
+        oldBonus.RemoveBonus(playerCombat);
+
+        // Add the new bonus
+        playerUppgrade.statBonuses.Add(newBonus);
+        ApplyBonusToPlayer(newBonus);
         HealthBarScript healthBar = FindObjectOfType<HealthBarScript>();
         healthBar.DrawHearts();
+
     }
-   
+
 
 
     private void ApplyBonusToPlayer(StatBonus bonus)
