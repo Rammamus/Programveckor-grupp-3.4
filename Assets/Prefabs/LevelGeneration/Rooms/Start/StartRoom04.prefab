@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 2857863275195563822}
   m_Layer: 0
   m_Name: WallPlaceholderTilemap
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4165,7 +4165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8291600251455388049, guid: 91f10c898bb4fb04b94bc52b84f32fd7, type: 3}
       propertyPath: m_InstanceId
-      value: -599414
+      value: -758738
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4311,7 +4311,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6782853321658758826, guid: c96f828f56420014d82717f2b4ac4478, type: 3}
       propertyPath: m_InstanceId
-      value: -599516
+      value: -758746
       objectReference: {fileID: 0}
     - target: {fileID: 7254975459886100783, guid: c96f828f56420014d82717f2b4ac4478, type: 3}
       propertyPath: m_Name
@@ -4997,7 +4997,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1687602571666029797, guid: 7d0e7fb73b94a70458ae4b3d6b204322, type: 3}
       propertyPath: m_InstanceId
-      value: -599444
+      value: -758764
       objectReference: {fileID: 0}
     - target: {fileID: 1897517479985583509, guid: 7d0e7fb73b94a70458ae4b3d6b204322, type: 3}
       propertyPath: m_Name
