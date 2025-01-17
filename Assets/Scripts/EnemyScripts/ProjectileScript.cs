@@ -17,7 +17,7 @@ public class ProjectileScript : MonoBehaviour
         player = FindObjectOfType<PlayerCombat>();
         direction = (player.transform.position - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 45 + 180));
         damage = FireflyCombat.FindObjectOfType<FireflyCombat>().attackDMG;
     }
 
@@ -37,7 +37,11 @@ public class ProjectileScript : MonoBehaviour
         if (collision.tag == "Player")
         {
             player.PlayerTakeDMG(damage);
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject);
+        else if (collision.tag == "Wall")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

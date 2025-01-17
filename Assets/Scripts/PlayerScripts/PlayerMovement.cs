@@ -102,8 +102,9 @@ public class PlayerMovement : MonoBehaviour
                 playerSprite.flipX = true;
             }
         }
-        else
+        else if ((Vector2)transform.position == lastClickedPos)
         {
+            lastClickedPos = (Vector2)transform.position;
             isMoving = false;
         }
 
