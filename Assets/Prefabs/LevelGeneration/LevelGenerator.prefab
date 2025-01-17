@@ -50,6 +50,7 @@ MonoBehaviour:
   normalRoomChance: 9
   TreasuryChance: 1
   roomWhiteObj: {fileID: 3322088945545014421, guid: 71f89c1ed440ba14a8b6144290c21699, type: 3}
+  mapOffset: {x: 13.7, y: 6}
 --- !u!114 &2844657320650682704
 MonoBehaviour:
   m_ObjectHideFlags: 0
