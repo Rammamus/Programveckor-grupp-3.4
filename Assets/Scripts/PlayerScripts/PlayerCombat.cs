@@ -113,6 +113,6 @@ public class PlayerCombat : MonoBehaviour
 
     public void PlayerDeath()
     {
-        //idk send back to the lobby
+        Application.Quit();
     }
 }
