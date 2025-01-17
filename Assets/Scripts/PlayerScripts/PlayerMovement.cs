@@ -4,8 +4,8 @@ using UnityEngine.AI;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10;
-    Vector2 lastClickedPos;
-    bool isMoving;
+    public Vector2 lastClickedPos;
+    public bool isMoving;
     bool mouseDown;
     public bool isDashing;
     public bool canDash;
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] GameObject moveCursor;
     NavMeshAgent agent;
-    Animator animator;
+    public Animator animator;
     SpriteRenderer playerSprite;
     Rigidbody2D rb;
 
