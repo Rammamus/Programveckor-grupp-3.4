@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -117,8 +117,10 @@ MonoBehaviour:
   left: 1
   right: 0
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &340296587375716429
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +174,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -236,8 +238,10 @@ MonoBehaviour:
   left: 0
   right: 0
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1571864207389872896
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +295,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -355,8 +359,10 @@ MonoBehaviour:
   left: 0
   right: 0
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1925210005713254922
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +416,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -474,8 +480,10 @@ MonoBehaviour:
   left: 1
   right: 1
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2073153804480430369
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +537,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -593,8 +601,10 @@ MonoBehaviour:
   left: 0
   right: 0
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2255727659917048491
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +658,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -712,8 +722,10 @@ MonoBehaviour:
   left: 1
   right: 1
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2793735161130940035
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,7 +779,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -831,8 +843,10 @@ MonoBehaviour:
   left: 1
   right: 0
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4685712803209796464
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +951,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1001,8 +1015,10 @@ MonoBehaviour:
   left: 1
   right: 0
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5277788013314961060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1072,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1120,8 +1136,10 @@ MonoBehaviour:
   left: 1
   right: 0
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5314152472454352065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1193,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1239,8 +1257,10 @@ MonoBehaviour:
   left: 0
   right: 0
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5416945912347758686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,7 +1314,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1358,8 +1378,10 @@ MonoBehaviour:
   left: 1
   right: 1
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5567114805791574095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,7 +1435,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1477,8 +1499,10 @@ MonoBehaviour:
   left: 1
   right: 0
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6235422345952890692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,7 +1556,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1596,8 +1620,10 @@ MonoBehaviour:
   left: 0
   right: 1
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6298331638768266973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,7 +1677,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1715,8 +1741,10 @@ MonoBehaviour:
   left: 0
   right: 1
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6408094271604802874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,7 +1798,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1834,8 +1862,10 @@ MonoBehaviour:
   left: 1
   right: 1
   type: 1
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7215316940347826303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,7 +1919,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1953,8 +1983,10 @@ MonoBehaviour:
   left: 1
   right: 1
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7510888218676677433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,7 +2040,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2072,8 +2104,10 @@ MonoBehaviour:
   left: 0
   right: 1
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8128351225041972503
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,7 +2161,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2191,8 +2225,10 @@ MonoBehaviour:
   left: 0
   right: 1
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8482226355007891443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2246,7 +2282,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2310,8 +2346,10 @@ MonoBehaviour:
   left: 1
   right: 1
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8515315670987031909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,7 +2403,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2429,5 +2467,7 @@ MonoBehaviour:
   left: 0
   right: 1
   type: 0
+  startColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0, g: 0.7735849, b: 0, a: 1}
+  treasuryColor: {r: 0, g: 0, b: 0, a: 0}
+  bossColor: {r: 0, g: 0, b: 0, a: 0}
