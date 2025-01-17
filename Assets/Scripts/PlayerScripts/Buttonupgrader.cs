@@ -39,6 +39,7 @@ public class Buttonupgrader : MonoBehaviour
     }
     public void AddStatBonus(string bonusName, float bonusValue, BonusType bonusType)
     {
+        Time.timeScale = 1f;
         PlayerUppgrades playerUppgrade = player.GetComponent<PlayerUppgrades>();
         int pmax = PlayerUppgrades.maxSlots;
         Debug.Log("Attempting to add bonus: " + bonusName); // Debug log
