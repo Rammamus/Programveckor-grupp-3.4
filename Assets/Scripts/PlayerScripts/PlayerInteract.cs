@@ -10,6 +10,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void Start()
     {
+        Talker talk = GetComponent<Talker>();
         interractText.SetActive(false);
     }
 
