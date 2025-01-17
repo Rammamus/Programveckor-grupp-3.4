@@ -5,6 +5,8 @@ using UnityEngine;
 public class FireflyCombat : EnemyCombat
 {
     [SerializeField] GameObject prefab;
+    [SerializeField] Transform[] positions;
+    Transform instantiatePosition;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -20,7 +22,14 @@ public class FireflyCombat : EnemyCombat
     public override void StartAttack(float dmg)
     {
         base.StartAttack(dmg);
-        Instantiate(prefab, transform.position, Quaternion.identity);
+        if (sprite.flipX == true)
+        {
+            instantiatePosition = positions[0];
+        }
+        else if (sprite.flipX == false)
+        {
+            instantiatePosition = positions[1];
+        }
     }
 
     public override void TakeDamage(float damage)
@@ -30,5 +39,10 @@ public class FireflyCombat : EnemyCombat
         {
             animator.Play("Firefly Die");
         }
+    }
+
+    public void FireflyShoot()
+    {
+        Instantiate(prefab, instantiatePosition.transform.position, Quaternion.identity);
     }
 }

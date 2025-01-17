@@ -127,6 +127,11 @@ public class UIManager : MonoBehaviour
         
     }
 
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     #region fullscreen dropdown
 
     public void ToggleFullScreen()
