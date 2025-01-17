@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 5153559416806132018}
   m_Layer: 0
   m_Name: SquareBossRoom02
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5223,7 +5223,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6253356462530295417, guid: d5743ce09bef92a4a8d43c6acb8581af, type: 3}
       propertyPath: m_InstanceId
-      value: -218974
+      value: -762636
       objectReference: {fileID: 0}
     - target: {fileID: 3009532069680700960, guid: d5743ce09bef92a4a8d43c6acb8581af, type: 3}
       propertyPath: m_Name
@@ -5661,7 +5661,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6253356462530295417, guid: d5743ce09bef92a4a8d43c6acb8581af, type: 3}
       propertyPath: m_InstanceId
-      value: -218892
+      value: -762648
       objectReference: {fileID: 0}
     - target: {fileID: 3009532069680700960, guid: d5743ce09bef92a4a8d43c6acb8581af, type: 3}
       propertyPath: m_Name
@@ -6285,7 +6285,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6253356462530295417, guid: d5743ce09bef92a4a8d43c6acb8581af, type: 3}
       propertyPath: m_InstanceId
-      value: -218870
+      value: -762734
       objectReference: {fileID: 0}
     - target: {fileID: 3009532069680700960, guid: d5743ce09bef92a4a8d43c6acb8581af, type: 3}
       propertyPath: m_Name

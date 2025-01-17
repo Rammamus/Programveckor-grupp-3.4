@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 2857863275195563822}
   m_Layer: 0
   m_Name: WallPlaceholderTilemap
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4115,7 +4115,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1687602571666029797, guid: 7d0e7fb73b94a70458ae4b3d6b204322, type: 3}
       propertyPath: m_InstanceId
-      value: -559168
+      value: -754212
       objectReference: {fileID: 0}
     - target: {fileID: 1897517479985583509, guid: 7d0e7fb73b94a70458ae4b3d6b204322, type: 3}
       propertyPath: m_Name
