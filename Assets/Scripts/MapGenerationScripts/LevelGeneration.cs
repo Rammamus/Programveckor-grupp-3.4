@@ -15,6 +15,10 @@ public class LevelGeneration : MonoBehaviour
 
     public GameObject roomWhiteObj;
 
+    public Vector2 mapOffset;
+
+    private Transform player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,7 @@ public class LevelGeneration : MonoBehaviour
         gridsizeY = Mathf.RoundToInt(worldsize.y);
         CreateRooms();
         SetRoomDoors();
+        player = FindObjectOfType<PlayerMovement>().transform;
         DrawMap();
         GetComponent<SheetAssigner>().Assign(rooms);
     }
@@ -170,7 +175,7 @@ public class LevelGeneration : MonoBehaviour
             Vector2 drawPos = room.gridPos;
             drawPos.x *= 1;
             drawPos.y *= 1;
-            MapSpriteSelector mapper = Object.Instantiate(roomWhiteObj, drawPos, Quaternion.identity).GetComponent<MapSpriteSelector>();
+            MapSpriteSelector mapper = Instantiate(roomWhiteObj, drawPos + mapOffset, Quaternion.identity, player).GetComponent<MapSpriteSelector>();
             mapper.type = room.type;
             mapper.up = room.doorTop;
             mapper.down = room.doorBot;
