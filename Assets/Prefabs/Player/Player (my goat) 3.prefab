@@ -6112,6 +6112,7 @@ GameObject:
   - component: {fileID: 3525556785974277609}
   - component: {fileID: 8020055147853511581}
   - component: {fileID: 3927142655515321041}
+  - component: {fileID: 380434388785890890}
   m_Layer: 8
   m_Name: Player (my goat) 3
   m_TagString: Player
@@ -6397,6 +6398,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statBonuses: []
   replacementpanel: {fileID: 0}
+--- !u!114 &380434388785890890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8193938343495857524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aca44a2140bf5e439fa393d92017ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dia: {fileID: 3769759932353431783}
 --- !u!1001 &265502521873977964
 PrefabInstance:
   m_ObjectHideFlags: 0
