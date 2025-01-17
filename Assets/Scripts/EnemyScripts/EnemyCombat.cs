@@ -19,7 +19,7 @@ public class EnemyCombat : MonoBehaviour
     EntityFlash flashEffect;
     public PlayerCombat player;
     public Animator animator;
-    SpriteRenderer sprite;
+    public SpriteRenderer sprite;
     EnemyMovement enemyMovement;
 
     // Start is called before the first frame update
