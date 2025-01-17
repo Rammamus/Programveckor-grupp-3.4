@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Upgradepanel: Upgradepanel
-  Playername: Player (my goat) 2
+  Playername: Player (my goat) 3
   Replacepanel: Replacepanel
   upgradeButton1: Upgrade1
   upgradeButton2: Upgrade2

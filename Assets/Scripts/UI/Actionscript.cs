@@ -12,12 +12,6 @@ public class Actionscript : MonoBehaviour
     }
     public void Action()
     {
-        if (gameObject.CompareTag("goldgoldgold"))
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Uppgradepanel.SetActive(true);
-            }
-        }
+       
     }
 }

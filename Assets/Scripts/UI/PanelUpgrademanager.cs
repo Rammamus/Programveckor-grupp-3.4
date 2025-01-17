@@ -13,6 +13,7 @@ public class PanelUpgrademanager : MonoBehaviour
     // Update is called once per frame
     public void OnEnable()
     {
+        Time.timeScale = 0f;
         foreach (Transform child in panel)
         {
             Destroy(child.gameObject);

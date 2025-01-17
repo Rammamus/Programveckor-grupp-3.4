@@ -62,6 +62,8 @@ public class DoorSetup : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.transform.position += direction * distance;
+            collision.GetComponent<PlayerMovement>().lastClickedPos = (Vector2)collision.transform.position;
+            collision.GetComponent<PlayerMovement>().animator.SetFloat("xVelocity", 0);
         }
     }
 }
