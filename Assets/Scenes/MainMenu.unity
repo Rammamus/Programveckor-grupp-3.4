@@ -2836,7 +2836,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "DEVELOPERS:\n\nTyler, Adrian, William, Edvin  &   Erwin\n ---------------------------------------------\nARTISTS\n\nLinnea 
+  m_text: "DEVELOPERS:\n\nTyler, Adrian, William, Edvin  &   Erwin\n -----------------------------\nARTISTS\n\nLinnea 
     &  Neo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0c4259c01f2ac524b9bff8e66d622a75, type: 2}
