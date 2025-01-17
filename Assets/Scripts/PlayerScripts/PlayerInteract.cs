@@ -10,6 +10,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void Start()
     {
+        Talker talk = GetComponent<Talker>();
         interractText.SetActive(false);
     }
 
@@ -23,10 +24,10 @@ public class PlayerInteract : MonoBehaviour
             {
                 //Debug.Log("Triggered by an object with the goldgoldgold tag!");
                 interractText.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
-                {
+                
+                
                     dial.Triggerdialogue();
-                }
+               
                 //collider.GetComponent<Actionscript>().Action();
             }
             else

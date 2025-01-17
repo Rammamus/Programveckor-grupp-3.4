@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4443157058510423410}
   - component: {fileID: 1249694232751877022}
   - component: {fileID: -3347662665913941242}
+  - component: {fileID: 619444504444194815}
+  - component: {fileID: 9046967562176156176}
   m_Layer: 0
   m_Name: Obelisk
   m_TagString: Untagged
@@ -181,3 +183,33 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &619444504444194815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3673894882838553694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559ea729805258747b01e9256971283a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Uppgradepanel: {fileID: 0}
+--- !u!114 &9046967562176156176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3673894882838553694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6876e10a5d73b094897819867437943e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - You feel power surge inside it.
+  talkSFX: []
