@@ -151,6 +151,7 @@ MonoBehaviour:
   maxHP: 4
   player: {fileID: 0}
   animator: {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!95 &5615766648148688868
 Animator:
   serializedVersion: 5
