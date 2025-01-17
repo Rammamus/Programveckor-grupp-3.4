@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     float dashTimer;
 
     [SerializeField] GameObject moveCursor;
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     public Animator animator;
     SpriteRenderer playerSprite;
     Rigidbody2D rb;

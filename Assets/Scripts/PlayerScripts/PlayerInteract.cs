@@ -7,6 +7,12 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] public GameObject interractText;
     public Talker dial;
     // Update is called once per frame
+
+    private void Start()
+    {
+        interractText.SetActive(false);
+    }
+
     public void Update()
     {
         Vector3 newposition = transform.position;
@@ -22,6 +28,10 @@ public class PlayerInteract : MonoBehaviour
                     dial.Triggerdialogue();
                 }
                 //collider.GetComponent<Actionscript>().Action();
+            }
+            else
+            {
+                interractText.SetActive(false);
             }
         }
     }
