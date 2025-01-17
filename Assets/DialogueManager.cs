@@ -44,7 +44,10 @@ public class DialogueManager : MonoBehaviour
         }
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        
+            StartCoroutine(TypeSentence(sentence));
+        
+        
     }
     IEnumerator TypeSentence(string sentence)
     {
@@ -60,7 +63,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Slut på konversationen.");
         panel.SetActive(false);
         Time.timeScale = 1f;
-        if (gameObject.CompareTag("goldgoldgold") && cooldown <= Time.time)
+        if (cooldown <= Time.time)
         {
             Uppgradepanel.SetActive(true);
             cooldown = Time.time + 100f;

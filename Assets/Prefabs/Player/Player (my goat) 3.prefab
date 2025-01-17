@@ -240,6 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8393974025447741636}
   - component: {fileID: 3769759932353431783}
+  - component: {fileID: 3362078303758153333}
   m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
@@ -280,6 +281,23 @@ MonoBehaviour:
   inconversation: 0
   panel: {fileID: 0}
   spelare: {fileID: 8193938343495857524}
+--- !u!114 &3362078303758153333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851184938046269325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6876e10a5d73b094897819867437943e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Obelisk
+    sentences:
+    - You feel the power surging within it.
+  talkSFX: []
 --- !u!1 &2315080352998194442
 GameObject:
   m_ObjectHideFlags: 0
@@ -6364,7 +6382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractText: {fileID: 0}
-  dial: {fileID: 0}
+  dial: {fileID: 3362078303758153333}
 --- !u!114 &3927142655515321041
 MonoBehaviour:
   m_ObjectHideFlags: 0
