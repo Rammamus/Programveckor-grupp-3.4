@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3834141381140623114}
   - component: {fileID: 1249265887533951286}
   - component: {fileID: -804380580780401815}
+  - component: {fileID: 1687602571666029797}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Untagged
@@ -130,3 +131,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9166667, y: 0.9166667}
   m_EdgeRadius: 0
+--- !u!114 &1687602571666029797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897517479985583509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.35492492, y: -0.33424374, z: 0}
+  - {x: -0.34895897, y: -0.023893714, z: 0}
+  - {x: -0.22891736, y: 0.1346169, z: 0}
+  - {x: -0.08606386, y: 0.43075788, z: 0}
+  - {x: 0.12053347, y: 0.45833337, z: 0}
+  - {x: 0.38731003, y: 0.116739154, z: 0}
+  - {x: 0.41697025, y: -0.23083547, z: 0}
+  - {x: 0.19428134, y: -0.35204446, z: 0}
+  m_ShapePathHash: -423084619
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 96422
+  m_LocalBounds:
+    m_Center: {x: 0.031022668, y: 0.053144455, z: 0}
+    m_Extent: {x: 0.3859476, y: 0.40518892, z: 0}

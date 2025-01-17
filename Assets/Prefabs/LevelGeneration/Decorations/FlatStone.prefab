@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7343475869233331629}
   - component: {fileID: 4801125731063778625}
   - component: {fileID: -85492542790852754}
+  - component: {fileID: 8291600251455388049}
   m_Layer: 0
   m_Name: FlatStone
   m_TagString: Untagged
@@ -130,3 +131,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.625, y: 0.9583333}
   m_EdgeRadius: 0
+--- !u!114 &8291600251455388049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902605642043879806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.53686, y: -0.33853436, z: 0}
+  - {x: -0.6494379, y: -0.13103008, z: 0}
+  - {x: -0.62131214, y: 0.24024105, z: 0}
+  - {x: -0.54255724, y: 0.39212418, z: 0}
+  - {x: -0.3737259, y: 0.4735422, z: 0}
+  - {x: 0.6381154, y: 0.47916698, z: 0}
+  - {x: 0.75126266, y: 0.33024502, z: 0}
+  - {x: 0.6999936, y: -0.15852451, z: 0}
+  - {x: 0.41374445, y: -0.3447914, z: 0}
+  - {x: -0.07565737, y: -0.37291718, z: 0}
+  m_ShapePathHash: 1724325965
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 95466
+  m_LocalBounds:
+    m_Center: {x: 0.05091238, y: 0.053124905, z: 0}
+    m_Extent: {x: 0.7003503, y: 0.42604208, z: 0}
