@@ -6,6 +6,7 @@ TagManager:
   tags:
   - goldgoldgold
   - PlayerAttack
+  - Wall
   layers:
   - Default
   - TransparentFX
