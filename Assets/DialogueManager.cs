@@ -61,12 +61,13 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("Slut på konversationen.");
-        panel.SetActive(false);
+        
         Time.timeScale = 1f;
         if (cooldown <= Time.time)
         {
             Uppgradepanel.SetActive(true);
             cooldown = Time.time + 100f;
         }
+        panel.SetActive(false);
     }
 }
